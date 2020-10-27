@@ -15,13 +15,11 @@ const User = require("../../models/User");
 // @route   GET /api/users/test
 // @desc    Tess users route
 // @access  Public
-
 router.get("/test", (req, res) => res.json({ msg: "Users Works" }));
 
 // @route   POST /api/users/register
 // @desc    Register a User
 // @access  Public
-
 router.post("/register", (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -104,21 +102,5 @@ router.post("/login", (req, res) => {
         });
     });
 });
-
-// @route   GET /api/users/current
-// @desc    Return current user
-// @access  Private
-
-router.get(
-    "/current",
-    passport.authenticate("jwt", { session: false }),
-    (req, res) => {
-        res.json({
-            id: req.user.id,
-            name: req.user.name,
-            email: req.user.email,
-        });
-    }
-);
 
 module.exports = router;
