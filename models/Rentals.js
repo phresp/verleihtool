@@ -49,6 +49,23 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now,
+    },
+    leihobjekt:{
+        device:{
+            type: String
+        },
+        inventorynumber:{
+            type:String
+        },
+        rbgnumber:{
+            type: String
+        },
+        serialnumber:{
+            type: String
+        },
+        details:{
+            type: String
+        },
     }
 
 });
