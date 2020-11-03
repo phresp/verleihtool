@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Rentals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/profileActions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/profileReducer.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
       <workItem from="1603807184965" duration="3945000" />
       <workItem from="1603824462286" duration="100000" />
       <workItem from="1603875983713" duration="2212000" />
-      <workItem from="1604409530707" duration="3147000" />
+      <workItem from="1604409530707" duration="7815000" />
     </task>
     <servers />
   </component>
@@ -70,18 +74,18 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603876184721">
+    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604413672499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1603876184721" />
+    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604413672499" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1603746905174">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1603746905174" />
-    <state x="1920" y="-836" width="1096" height="692" maximized="true" key="dock-window-1" timestamp="1604409563491">
+    <state x="1920" y="-836" width="1096" height="669" key="dock-window-1" timestamp="1604415693021">
       <screen x="1920" y="-836" width="1080" height="1880" />
     </state>
-    <state x="1920" y="-836" width="1096" height="692" maximized="true" key="dock-window-1/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604409563491" />
+    <state x="1920" y="-836" width="1096" height="669" key="dock-window-1/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604415693021" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1603746851876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
