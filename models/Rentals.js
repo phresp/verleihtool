@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //Create Schema
-const UserSchema = new Schema({
+const RentalsSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -70,4 +70,4 @@ const UserSchema = new Schema({
 
 });
 
-module.exports = Rentals = mongoose.model("rentals", UserSchema);
+module.exports = Rentals = mongoose.model("rentals", RentalsSchema);
