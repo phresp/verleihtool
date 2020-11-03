@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import {getRentals} from "../../actions/rentalActions";
+import DashboardActions from "./DashboardActions";
 
 
 class Dashboard extends Component {
@@ -17,7 +18,7 @@ class Dashboard extends Component {
 
     render() {
         const rentals = this.props.rentals.rentals
-        let leihen;
+        let leihen = [];
         if(rentals){
             leihen = rentals.map((rents) => (
                 <tr key={rents._id}>
@@ -27,37 +28,57 @@ class Dashboard extends Component {
                     <td>{rents.adresse}</td>
                     <td>{rents.telefonnummer}</td>
                     <td>
+                    <button className="btn btn-primary">
+                        Betrachten
+                    </button>
+                    </td>
+                    <td>
                         <button
                             className="btn btn-danger"
                         >
-                            Delete
+                            Löschen
                         </button>
                     </td>
+
                 </tr>
             ));
-        } else {
-           leihen = [];
         }
+
+        let dashboardContent = (
+            <div>
+                <DashboardActions />
+                <div>
+                    <table className="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>TUM-ID</th>
+                            <th>Email</th>
+                            <th>Adresse</th>
+                            <th>Telefonnummer</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {leihen}
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        );
 
 
         return (
-            <div>
-                <h4 className="mb-4">Ausleihen</h4>
-                <table className="table">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>TUM-ID</th>
-                        <th>Email</th>
-                        <th>Adresse</th>
-                        <th>Telefonnummer</th>
-                    </tr>
-                    {leihen}
-                    </thead>
-                </table>
+            <div className="dashboard">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h1 className="display-4">Verleihübersicht</h1>
+                            {dashboardContent}
+                        </div>
+                    </div>
+                </div>
             </div>
         );}
-
 }
 
 Dashboard.propTypes = {
@@ -69,6 +90,7 @@ Dashboard.propTypes = {
 const mapStateToProps = (state) => ({
     rentals: state.rentals,
     auth: state.auth,
+    errors: state.errors,
 });
 
 export default connect(mapStateToProps, { getRentals })(
