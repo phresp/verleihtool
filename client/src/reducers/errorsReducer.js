@@ -7,6 +7,6 @@ export default function (state = initialState, action) {
     case GET_ERRORS:
       return action.payload;
     default:
-      return state;
+      return {};
   }
 }

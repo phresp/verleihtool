@@ -54,3 +54,21 @@ export const updateRental = (id, rentalData, history) => (dispatch) => {
       })
     );
 };
+
+//Delete Rental
+export const deleteRental = (id, history) => (dispatch) => {
+  axios
+    .delete(`api/rentals/${id}`)
+    .then((res) => {
+      dispatch({
+        type: GET_RENTALS,
+        payload: res.data,
+      });
+    })
+    .catch((err) =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data,
+      })
+    );
+};

@@ -8,17 +8,11 @@ import { deleteRental } from "../../actions/rentalActions";
 
 class Dashboard extends Component {
   onDeleteClick(id) {
-    this.props.deleteRental(id);
+    this.props.deleteRental(id, this.props.history);
   }
 
   componentDidMount() {
     this.props.getRentals();
-  }
-  constructor(props) {
-    super(props);
-    this.state = {
-      errors: {},
-    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,7 +36,12 @@ class Dashboard extends Component {
             </Link>
           </td>
           <td>
-            <button className="btn btn-danger">Löschen</button>
+            <button
+              onClick={this.onDeleteClick.bind(this, rents._id)}
+              className="btn btn-danger"
+            >
+              Löschen
+            </button>
           </td>
         </tr>
       ));
@@ -85,6 +84,7 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   getRentals: PropTypes.func.isRequired,
+  deleteRental: PropTypes.func.isRequired,
   rentals: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
 };
@@ -92,7 +92,8 @@ Dashboard.propTypes = {
 const mapStateToProps = (state) => ({
   rentals: state.rentals,
   auth: state.auth,
-  errors: state.errors,
 });
 
-export default connect(mapStateToProps, { getRentals })(withRouter(Dashboard));
+export default connect(mapStateToProps, { getRentals, deleteRental })(
+  withRouter(Dashboard)
+);

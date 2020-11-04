@@ -53,8 +53,12 @@ class ViewRental extends Component {
 
     if (nextProps.rentals.rental) {
       const rental = nextProps.rentals.rental;
+
       //Check if Leihobject is there
-      rental.leihobjekt = !isEmpty(rental.leihobjekt) ? rental.name : {};
+      rental.leihobjekt = !isEmpty(rental.leihobjekt) ? rental.leihobjekt : {};
+      rental.vertragslaufzeit = !isEmpty(rental.vertragslaufzeit)
+        ? rental.vertragslaufzeit
+        : {};
 
       //If rental field doesn't exist, make empty string
       rental.name = !isEmpty(rental.name) ? rental.name : "";
