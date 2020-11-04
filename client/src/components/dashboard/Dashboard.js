@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { withRouter, Link } from "react-router-dom";
 import { getRentals } from "../../actions/rentalActions";
 import DashboardActions from "./DashboardActions";
+import { deleteRental } from "../../actions/rentalActions";
 
 class Dashboard extends Component {
+  onDeleteClick(id) {
+    this.props.deleteRental(id);
+  }
+
   componentDidMount() {
     this.props.getRentals();
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      errors: {},
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,7 +37,9 @@ class Dashboard extends Component {
           <td>{rents.tumid}</td>
           <td>{rents.email}</td>
           <td>
-            <button className="btn btn-primary">Betrachten</button>
+            <Link to={`/rental/${rents._id}`} className="btn btn-info">
+              Betrachten
+            </Link>
           </td>
           <td>
             <button className="btn btn-danger">Löschen</button>
@@ -81,4 +95,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps, { getRentals })(Dashboard);
+export default connect(mapStateToProps, { getRentals })(withRouter(Dashboard));

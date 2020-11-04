@@ -6,7 +6,7 @@ import { GET_RENTALS, GET_RENTAL, GET_ERRORS } from "./types";
 export const getRentals = () => (dispatch) => {
   axios
     .get("/api/rentals")
-    .then((res) => dispatch({ type: GET_RENTAL, payload: res.data }))
+    .then((res) => dispatch({ type: GET_RENTALS, payload: res.data }))
     .catch((err) =>
       dispatch({
         type: GET_RENTALS,
@@ -19,10 +19,10 @@ export const getRentals = () => (dispatch) => {
 export const getRentalOfId = (id) => (dispatch) => {
   axios
     .get(`/api/rentals/${id}`)
-    .then((res) => dispatch({ type: GET_RENTALS, payload: res.data }))
+    .then((res) => dispatch({ type: GET_RENTAL, payload: res.data }))
     .catch((err) =>
       dispatch({
-        type: GET_RENTALS,
+        type: GET_RENTAL,
         payload: {},
       })
     );
@@ -32,6 +32,20 @@ export const getRentalOfId = (id) => (dispatch) => {
 export const createRental = (rentalData, history) => (dispatch) => {
   axios
     .post("api/rentals", rentalData)
+    .then((res) => history.push("/dashboard"))
+    .catch((err) =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data,
+      })
+    );
+};
+
+//UpdateRental
+export const updateRental = (id, rentalData, history) => (dispatch) => {
+  console.log(id);
+  axios
+    .post(`http://localhost:3000/api/rentals/${id}`, rentalData)
     .then((res) => history.push("/dashboard"))
     .catch((err) =>
       dispatch({

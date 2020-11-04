@@ -2,6 +2,7 @@ import { GET_RENTALS, GET_RENTAL } from "../actions/types";
 
 const initialState = {
   rentals: null,
+  rental: null,
   loading: false,
 };
 
@@ -11,12 +12,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         rentals: action.payload,
+        rental: null,
         loading: false,
       };
     case GET_RENTAL:
       return {
         ...state,
-        rentals: action.payload,
+        rentals: null,
+        rental: action.payload,
         loading: false,
       };
     default:

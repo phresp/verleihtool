@@ -16,6 +16,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateRental from "./components/create-rental/CreateRental";
+import ViewRental from "./components/view-rental/ViewRental";
 
 import "./App.css";
 
@@ -57,6 +58,9 @@ class App extends Component {
                   path="/new-rental"
                   component={CreateRental}
                 />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/rental/:id" component={ViewRental} />
               </Switch>
             </div>
             <Footer />

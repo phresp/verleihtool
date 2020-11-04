@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
@@ -26,7 +26,7 @@ class CreateRental extends Component {
       leihscheinverschickt: "",
       device: "",
       inventorynumber: "",
-      rgbnumber: "",
+      rbgnumber: "",
       serialnumber: "",
       details: "",
       errors: {},
@@ -60,7 +60,7 @@ class CreateRental extends Component {
       leihscheinverschickt: this.state.leihscheinverschickt,
       device: this.state.device,
       inventorynumber: this.state.inventorynumber,
-      rgbnumber: this.state.rgbnumber,
+      rbgnumber: this.state.rbgnumber,
       serialnumber: this.state.serialnumber,
       details: this.state.details,
     };
@@ -79,6 +79,9 @@ class CreateRental extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+              <Link to={"/dashboard"} className={"btn btn-light"}>
+                zurück
+              </Link>
               <h1 className="display-4 text-center">Neue Ausleihe</h1>
               <small className="d-block pb-3">* = Pflichtfelder</small>
               <form onSubmit={this.onSubmit}>
