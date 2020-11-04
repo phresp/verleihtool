@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-import { getRentalOfId, getRentals } from "../../actions/rentalActions";
+import { withRouter } from "react-router-dom";
+import { getRentalOfId } from "../../actions/rentalActions";
 import PropTypes from "prop-types";
 import isEmpty from "../../validation/is-empty";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import moment from "moment";
-import SelectListGroup from "../common/SelectListGroup";
-import InputGroup from "../common/InputGroup";
-import rentalReducer from "../../reducers/rentalReducer";
 
 import { updateRental } from "../../actions/rentalActions";
 
@@ -54,7 +51,7 @@ class ViewRental extends Component {
     if (nextProps.rentals.rental) {
       const rental = nextProps.rentals.rental;
 
-      //Check if Leihobject is there
+      //Check if Leihobjekt is there
       rental.leihobjekt = !isEmpty(rental.leihobjekt) ? rental.leihobjekt : {};
       rental.vertragslaufzeit = !isEmpty(rental.vertragslaufzeit)
         ? rental.vertragslaufzeit
@@ -95,7 +92,7 @@ class ViewRental extends Component {
         ? rental.leihobjekt.device
         : "";
       rental.inventorynumber = !isEmpty(rental.leihobjekt.inventorynumber)
-        ? rental.inventorynumber
+        ? rental.leihobjekt.inventorynumber
         : "";
       rental.rbgnumber = !isEmpty(rental.leihobjekt.rbgnumber)
         ? rental.leihobjekt.rbgnumber
@@ -161,7 +158,7 @@ class ViewRental extends Component {
   }
 
   render() {
-    const { errors, processable } = this.state;
+    const { errors } = this.state;
     console.log(errors);
     return (
       <div className="edit-rental">

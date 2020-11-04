@@ -158,10 +158,9 @@ router.post(
       { new: true }
     )
       .then((rentals) => res.json(rentals))
-      .catch((err) => {
-        console.log(err);
-        res.status(404).json({ norentalfound: "Keine Ausleihen gefunden" });
-      });
+      .catch((err) =>
+        res.status(404).json({ norentalfound: "Keine Ausleihen gefunden" })
+      );
   }
 );
 
