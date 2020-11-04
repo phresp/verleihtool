@@ -20,6 +20,7 @@
     "mongoose": "^5.10.10",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "prettier": "^2.1.2",
     "validator": "^13.1.17"
   },
   "devDependencies": {
