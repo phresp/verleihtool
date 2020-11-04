@@ -8,7 +8,7 @@ import { deleteRental } from "../../actions/rentalActions";
 
 class Dashboard extends Component {
   onDeleteClick(id) {
-    this.props.deleteRental(id, this.props.history);
+    this.props.deleteRental(id);
   }
 
   componentDidMount() {

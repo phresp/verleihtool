@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_RENTALS, GET_RENTAL, GET_ERRORS } from "./types";
+import { GET_RENTALS, GET_RENTAL, GET_ERRORS, DELETE_RENTAL } from "./types";
 
 //Get Rentals
 export const getRentals = () => (dispatch) => {
@@ -56,13 +56,13 @@ export const updateRental = (id, rentalData, history) => (dispatch) => {
 };
 
 //Delete Rental
-export const deleteRental = (id, history) => (dispatch) => {
+export const deleteRental = (id) => (dispatch) => {
   axios
     .delete(`api/rentals/${id}`)
     .then((res) => {
       dispatch({
-        type: GET_RENTALS,
-        payload: res.data,
+        type: DELETE_RENTAL,
+        payload: id,
       });
     })
     .catch((err) =>

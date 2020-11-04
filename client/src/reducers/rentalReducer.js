@@ -1,4 +1,4 @@
-import { GET_RENTALS, GET_RENTAL } from "../actions/types";
+import { GET_RENTALS, GET_RENTAL, DELETE_RENTAL } from "../actions/types";
 
 const initialState = {
   rentals: null,
@@ -22,7 +22,18 @@ export default function (state = initialState, action) {
         rental: action.payload,
         loading: false,
       };
+    case DELETE_RENTAL:
+      return {
+        ...state,
+        rentals: state.rentals.filter(
+          (rentals) => rentals._id !== action.payload
+        ),
+      };
     default:
-      return state;
+      return {
+        rentals: null,
+        rental: null,
+        loading: false,
+      };
   }
 }

@@ -173,7 +173,7 @@ router.delete(
     Rentals.findById(req.params.id)
       .then((rental) => {
         // Delete
-        rental.remove();
+        rental.remove().then(() => res.status(200).json({ success: true }));
       })
       .catch((err) => {
         res.status(404).json({ rentalnotfound: "Ausleihe nicht gefunden" });

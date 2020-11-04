@@ -4,9 +4,9 @@
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/rentalActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rentalActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/errorsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/errorsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/rentalReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rentalReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/rentals.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +61,7 @@
       <workItem from="1603824462286" duration="100000" />
       <workItem from="1603875983713" duration="2212000" />
       <workItem from="1604409530707" duration="10229000" />
-      <workItem from="1604470057753" duration="21485000" />
+      <workItem from="1604470057753" duration="23253000" />
     </task>
     <servers />
   </component>
