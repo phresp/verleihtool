@@ -116,14 +116,12 @@ class ViewRental extends Component {
         adresse: rental.adresse,
         telefonnummer: rental.telefonnummer,
         veranstaltung: rental.veranstaltung,
-        von: moment.utc(rental.vertragslaufzeit.von).format("YYYY-MM-DD"),
-        bis: moment.utc(rental.vertragslaufzeit.bis).format("YYYY-MM-DD"),
+        von: rental.vertragslaufzeit.von,
+        bis: rental.vertragslaufzeit.bis,
         betreuer: rental.betreuer,
-        angeschrieben: moment.utc(rental.angeschrieben).format("YYYY-MM-DD"),
-        rückmeldung: moment.utc(rental.rückmeldung).format("YYYY-MM-DD"),
-        leihscheinverschickt: moment
-          .utc(rental.leihscheinverschickt)
-          .format("YYYY-MM-DD"),
+        angeschrieben: rental.angeschrieben,
+        rückmeldung: rental.rückmeldung,
+        leihscheinverschickt: rental.leihscheinverschickt,
         device: rental.device,
         inventorynumber: rental.inventorynumber,
         rbgnumber: rental.rbgnumber,
@@ -154,7 +152,7 @@ class ViewRental extends Component {
       serialnumber: this.state.serialnumber,
       details: this.state.details,
     };
-
+    console.log(this.state.id);
     this.props.updateRental(this.state.id, rentalData, this.props.history);
   }
 
@@ -239,7 +237,7 @@ class ViewRental extends Component {
                 <TextFieldGroup
                   type={"date"}
                   onChange={this.onChange}
-                  value={this.state.von}
+                  value={moment.utc(this.state.von).format("YYYY-MM-DD")}
                   name={"von"}
                   error={errors.von}
                   disabled={this.state.processable ? "disabled" : ""}
@@ -248,7 +246,7 @@ class ViewRental extends Component {
                 <TextFieldGroup
                   type={"date"}
                   onChange={this.onChange}
-                  value={this.state.bis}
+                  value={moment.utc(this.state.bis).format("YYYY-MM-DD")}
                   name={"bis"}
                   error={errors.bis}
                   disabled={this.state.processable ? "disabled" : ""}
@@ -265,7 +263,9 @@ class ViewRental extends Component {
                 <TextFieldGroup
                   type={"date"}
                   onChange={this.onChange}
-                  value={this.state.angeschrieben}
+                  value={moment
+                    .utc(this.state.angeschrieben)
+                    .format("YYYY-MM-DD")}
                   name={"angeschrieben"}
                   error={errors.angeschrieben}
                   disabled={this.state.processable ? "disabled" : ""}
@@ -274,7 +274,9 @@ class ViewRental extends Component {
                 <TextFieldGroup
                   type={"date"}
                   onChange={this.onChange}
-                  value={this.state.leihscheinverschickt}
+                  value={moment
+                    .utc(this.state.leihscheinverschickt)
+                    .format("YYYY-MM-DD")}
                   name={"leihscheinverschickt"}
                   error={errors.leihscheinverschickt}
                   disabled={this.state.processable ? "disabled" : ""}
@@ -283,7 +285,9 @@ class ViewRental extends Component {
                 <TextFieldGroup
                   type={"date"}
                   onChange={this.onChange}
-                  value={this.state.rückmeldung}
+                  value={moment
+                    .utc(this.state.rückmeldung)
+                    .format("YYYY-MM-DD")}
                   name={"rückmeldung"}
                   error={errors.rückmeldung}
                   disabled={this.state.processable ? "disabled" : ""}

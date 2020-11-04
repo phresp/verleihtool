@@ -151,15 +151,17 @@ router.post(
     if (req.body.details) rentalsFields.leihobjekt.details = req.body.details;
 
     //Update
+
     Rentals.findOneAndUpdate(
       { _id: req.params.id },
       { $set: rentalsFields },
       { new: true }
     )
       .then((rentals) => res.json(rentals))
-      .catch((err) =>
-        res.status(404).json({ norentalfound: "Keine Ausleihen gefunden" })
-      );
+      .catch((err) => {
+        console.log(err);
+        res.status(404).json({ norentalfound: "Keine Ausleihen gefunden" });
+      });
   }
 );
 
