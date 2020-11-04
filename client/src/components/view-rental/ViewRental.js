@@ -180,7 +180,7 @@ class ViewRental extends Component {
                     Bearbeiten an/aus
                   </button>
                 </div>
-
+                <h6>Name:</h6>
                 <TextFieldGroup
                   placeholder="* 'Name'"
                   onChange={this.onChange}
@@ -189,15 +189,16 @@ class ViewRental extends Component {
                   error={errors.name}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-
+                <h6>TUM-ID:</h6>
                 <TextFieldGroup
-                  placeholder="* Tum-ID"
+                  placeholder="* TUM-ID"
                   onChange={this.onChange}
                   value={this.state.tumid}
                   name="tumid"
                   error={errors.tumid}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+                <h6>Email-Adresse:</h6>
                 <TextFieldGroup
                   placeholder="* Email"
                   onChange={this.onChange}
@@ -206,14 +207,16 @@ class ViewRental extends Component {
                   error={errors.email}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+                <h6>Anschrift:</h6>
                 <TextAreaFieldGroup
-                  placeholder="* Adresse"
+                  placeholder="* Anschrift"
                   onChange={this.onChange}
                   value={this.state.adresse}
                   name="adresse"
                   error={errors.adresse}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+                <h6>Telefonnummer:</h6>
                 <TextFieldGroup
                   placeholder="* Telefonnummer"
                   onChange={this.onChange}
@@ -222,6 +225,7 @@ class ViewRental extends Component {
                   error={errors.telefonnummer}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+                <h6>Veranstaltung:</h6>
                 <TextFieldGroup
                   placeholder="Veranstaltung"
                   onChange={this.onChange}
@@ -248,6 +252,7 @@ class ViewRental extends Component {
                   error={errors.bis}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+                <h6>Betreuer:</h6>
                 <TextFieldGroup
                   placeholder="Betreuer"
                   onChange={this.onChange}
@@ -289,6 +294,7 @@ class ViewRental extends Component {
                   error={errors.rückmeldung}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+                <h6>Leigerät:</h6>
                 <TextFieldGroup
                   placeholder="Leihgerät"
                   onChange={this.onChange}
@@ -297,7 +303,7 @@ class ViewRental extends Component {
                   error={errors.device}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-
+                <h6>Inventarnummer Leihgerät:</h6>
                 <TextFieldGroup
                   placeholder="Inventarnummer"
                   onChange={this.onChange}
@@ -306,7 +312,7 @@ class ViewRental extends Component {
                   error={errors.inventorynumber}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-
+                <h6>RBG-Nummer Leihgerät:</h6>
                 <TextFieldGroup
                   placeholder="RBG-Nummer"
                   onChange={this.onChange}
@@ -315,7 +321,7 @@ class ViewRental extends Component {
                   error={errors.rbgnumber}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-
+                <h6>Seriennummer Leihgerät:</h6>
                 <TextFieldGroup
                   placeholder="Seriennummer"
                   onChange={this.onChange}
@@ -324,7 +330,7 @@ class ViewRental extends Component {
                   error={errors.serialnumber}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-
+                <h6>Details:</h6>
                 <TextAreaFieldGroup
                   placeholder="Details"
                   onChange={this.onChange}

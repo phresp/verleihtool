@@ -17,7 +17,7 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-            Dashboard
+            Übersicht
           </Link>
         </li>
         <li className="nav-item">
@@ -80,6 +80,4 @@ const mapsStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapsStateToProps, { logoutUser})(
-  Navbar
-);
+export default connect(mapsStateToProps, { logoutUser })(Navbar);
