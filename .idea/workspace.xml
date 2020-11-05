@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/keys_dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/rentalActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rentalActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/keys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/rentals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +61,7 @@
       <workItem from="1604409530707" duration="10229000" />
       <workItem from="1604470057753" duration="30137000" />
       <workItem from="1604512369609" duration="1745000" />
-      <workItem from="1604559831708" duration="6548000" />
+      <workItem from="1604559831708" duration="7254000" />
     </task>
     <servers />
   </component>
