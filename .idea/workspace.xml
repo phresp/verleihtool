@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/keys_dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/rentalActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rentalActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/keys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/rentals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +39,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="F:\Github-Projects\verleihtool\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
@@ -32,13 +47,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Github-Projects\Verleihtool\routes\api" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Github-Projects\verleihtool\templates" />
       <recent name="F:\Github-Projects\verleihtool\client\src" />
       <recent name="F:\Github-Projects\verleihtool\client" />
       <recent name="F:\Github-Projects\verleihtool\client\validation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Github-Projects\Verleihtool\routes\api" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -56,7 +72,9 @@
       <workItem from="1603824462286" duration="100000" />
       <workItem from="1603875983713" duration="2212000" />
       <workItem from="1604409530707" duration="10229000" />
-      <workItem from="1604470057753" duration="30020000" />
+      <workItem from="1604470057753" duration="30137000" />
+      <workItem from="1604512369609" duration="1745000" />
+      <workItem from="1604559831708" duration="6548000" />
     </task>
     <servers />
   </component>
@@ -69,30 +87,30 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604413672499">
+    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604561150508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604413672499" />
+    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604561150508" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604471806084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604471806084" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1604472082243">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1604505968228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472082243" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1604472082243">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968228" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1604505968228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472082243" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1604472082242">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968228" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1604505968227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472082242" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1604472082243">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968227" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1604505968228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472082243" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968228" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1604472434538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

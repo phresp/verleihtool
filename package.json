@@ -16,11 +16,16 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "fill-pdf": "^1.1.0",
+    "fill-pdf-utf8": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.10",
+    "node-gyp": "^7.1.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "pdftk": "0.0.0-rc.0",
     "prettier": "^2.1.2",
+    "rebuild": "^0.1.2",
     "validator": "^13.1.17"
   },
   "devDependencies": {

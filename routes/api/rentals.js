@@ -2,8 +2,12 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
+const keys = require("../../config/keys_dev");
 const passport = require("passport");
+
+//Import Leihschein-Template-Path
+const formDate = {};
+const pdfTemplatePath = "../../templates/Leihschein-Template.pdf";
 
 //Load input validation
 const validateRentalsInput = require("../../validation/rentals");

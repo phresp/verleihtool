@@ -31,7 +31,7 @@ export const getRentalOfId = (id) => (dispatch) => {
 //CreateRental
 export const createRental = (rentalData, history) => (dispatch) => {
   axios
-    .post("api/rentals", rentalData)
+    .post("/api/rentals", rentalData)
     .then((res) => history.push("/dashboard"))
     .catch((err) =>
       dispatch({
@@ -45,7 +45,7 @@ export const createRental = (rentalData, history) => (dispatch) => {
 export const updateRental = (id, rentalData, history) => (dispatch) => {
   console.log(id);
   axios
-    .post(`http://localhost:3000/api/rentals/${id}`, rentalData)
+    .post(`/api/rentals/${id}`, rentalData)
     .then((res) => history.push("/dashboard"))
     .catch((err) =>
       dispatch({
@@ -58,7 +58,7 @@ export const updateRental = (id, rentalData, history) => (dispatch) => {
 //Delete Rental
 export const deleteRental = (id) => (dispatch) => {
   axios
-    .delete(`api/rentals/${id}`)
+    .delete(`/api/rentals/${id}`)
     .then((res) => {
       dispatch({
         type: DELETE_RENTAL,

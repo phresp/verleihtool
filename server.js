@@ -6,7 +6,6 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const rentals = require("./routes/api/rentals");
 
-
 const app = express();
 
 // Body parser middleware
@@ -14,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //DB Config
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys_dev").mongoURI;
 
 //Connect to MongoDB
 mongoose

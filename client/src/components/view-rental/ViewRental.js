@@ -159,7 +159,7 @@ class ViewRental extends Component {
 
   render() {
     const { errors } = this.state;
-    console.log(errors);
+
     return (
       <div className="edit-rental">
         <div className="container">
@@ -168,17 +168,24 @@ class ViewRental extends Component {
               <h3>Ausleihe von {this.state.name}</h3>
               <form onSubmit={this.onSubmit}>
                 <div className="mb-4">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      this.setState((prevState) => ({
-                        processable: !prevState.processable,
-                      }));
-                    }}
-                    className="btn btn-light"
-                  >
-                    Bearbeiten an/aus
-                  </button>
+                  <div className="col">
+                    <div className="btn-group">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          this.setState((prevState) => ({
+                            processable: !prevState.processable,
+                          }));
+                        }}
+                        className="btn btn-dark"
+                      >
+                        Bearbeiten an/aus
+                      </button>
+                      <button type="button" className="btn btn-info">
+                        PDF exportieren
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <h6>Name:</h6>
                 <TextFieldGroup
