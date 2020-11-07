@@ -17,7 +17,7 @@ const validateRentalsInput = require("../../validation/rentals");
 const Rentals = require("../../models/Rentals");
 
 // @route   GET /api/users/test
-// @desc    Tess users route
+// @desc    Test users route
 // @access  Public
 router.get("/test", (req, res) => res.json({ msg: "Rentals Works" }));
 
