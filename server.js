@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //DB Config
-const db = require("./config/keys_dev").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 //Connect to MongoDB
 mongoose
@@ -23,7 +23,7 @@ mongoose
     useNewUrlParser: true,
     useFindAndModify: false,
   })
-  .then(() => console.log("Mongodb connected"))
+  .then(() => console.log(process.env.NODE_ENV))
   .catch((err) => console.log(err));
 
 //Passport middleware
