@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/rentalActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rentalActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/rentals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Leihschein-Template.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Leihschein-Template.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +37,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Github-Projects\Verleihtool\routes\api" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Github-Projects\verleihtool\templates" />
       <recent name="F:\Github-Projects\verleihtool\client\src" />
       <recent name="F:\Github-Projects\verleihtool\client" />
       <recent name="F:\Github-Projects\verleihtool\client\validation" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Github-Projects\Verleihtool\routes\api" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,7 +69,7 @@
       <workItem from="1604681288539" duration="595000" />
       <workItem from="1604774575133" duration="1284000" />
       <workItem from="1604835953229" duration="2329000" />
-      <workItem from="1604905237622" duration="9328000" />
+      <workItem from="1604905237622" duration="23099000" />
     </task>
     <servers />
   </component>
@@ -107,10 +110,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472434538" />
-    <state x="1920" y="-836" width="1096" height="669" maximized="true" key="dock-window-1" timestamp="1604476551506">
+    <state x="1901" y="-853" width="1096" height="673" maximized="true" key="dock-window-1" timestamp="1604938619513">
       <screen x="1920" y="-836" width="1080" height="1880" />
     </state>
-    <state x="1920" y="-836" width="1096" height="669" maximized="true" key="dock-window-1/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604476551506" />
+    <state x="1901" y="-853" width="1096" height="673" maximized="true" key="dock-window-1/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604938619513" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1603746851876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

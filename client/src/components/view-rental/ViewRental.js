@@ -9,10 +9,15 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import moment from "moment";
 
 import { updateRental } from "../../actions/rentalActions";
+import { downloadRentalform } from "../../actions/rentalActions";
 
 class ViewRental extends Component {
   componentDidMount() {
     this.props.getRentalOfId(this.props.match.params.id);
+  }
+
+  onDownloadClick() {
+    this.props.downloadRentalform();
   }
 
   constructor(props) {
@@ -149,7 +154,6 @@ class ViewRental extends Component {
       serialnumber: this.state.serialnumber,
       details: this.state.details,
     };
-    console.log(this.state.id);
     this.props.updateRental(this.state.id, rentalData, this.props.history);
   }
 
@@ -181,7 +185,10 @@ class ViewRental extends Component {
                       >
                         Bearbeiten an/aus
                       </button>
-                      <button type="button" className="btn btn-info">
+                      <button
+                        onClick={this.onDownloadClick.bind(this)}
+                        className="btn btn-info"
+                      >
                         PDF exportieren
                       </button>
                     </div>
@@ -374,6 +381,8 @@ const mapStateToProps = (state) => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps, { getRentalOfId, updateRental })(
-  withRouter(ViewRental)
-);
+export default connect(mapStateToProps, {
+  getRentalOfId,
+  updateRental,
+  downloadRentalform,
+})(withRouter(ViewRental));

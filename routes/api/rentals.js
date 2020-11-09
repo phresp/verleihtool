@@ -4,10 +4,23 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys_dev");
 const passport = require("passport");
+const pdftk = require("node-pdftk");
+const fs = require("fs");
+const path = require("path");
+
+//pdftk config
+pdftk.configure({
+  bin: "H:\\PDFtk\\bin\\pdftk.exe",
+});
 
 //Import Leihschein-Template-Path
-const formDate = {};
-const pdfTemplatePath = "../../templates/Leihschein-Template.pdf";
+const formData = {};
+const pdfTemplatePath = path.resolve(
+  __dirname + "../../../templates/Leihschein-Template.pdf"
+);
+const pdfOutputPath = path.resolve(
+  __dirname + "../../../templates/Leihschein-Template-filled.pdf"
+);
 
 //Load input validation
 const validateRentalsInput = require("../../validation/rentals");
@@ -182,6 +195,33 @@ router.delete(
       })
       .catch((err) => {
         res.status(404).json({ rentalnotfound: "Ausleihe nicht gefunden" });
+      });
+  }
+);
+
+// @route   GET /api/rentals/download/rentalform
+// @desc    GET Filled pdf
+// @access  Private
+router.post(
+  "/download/rentalform",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const formdata = {
+      name: "Philipp",
+      tumid: "tumid",
+    };
+    console.log(pdfTemplatePath);
+    pdftk
+      .input(pdfTemplatePath)
+      .fillForm(formdata)
+      .flatten()
+      .output(pdfOutputPath)
+      .then((buf) => {
+        res.type("application/pdf");
+        res.send(buf);
+      })
+      .catch((err) => {
+        res.status(404).json({ err });
       });
   }
 );
