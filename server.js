@@ -23,7 +23,7 @@ mongoose
     useNewUrlParser: true,
     useFindAndModify: false,
   })
-  .then(() => console.log(process.env.NODE_ENV))
+  .then(() => console.log("Mongodb connected"))
   .catch((err) => console.log(err));
 
 //Passport middleware
