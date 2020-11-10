@@ -11,6 +11,7 @@ class CreateRental extends Component {
     super(props);
     this.state = {
       name: "",
+      vorname: "",
       tumid: "",
       email: "",
       adresse: "",
@@ -45,6 +46,7 @@ class CreateRental extends Component {
 
     const rentalData = {
       name: this.state.name,
+      vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
       adresse: this.state.adresse,
@@ -84,12 +86,21 @@ class CreateRental extends Component {
               <small className="d-block pb-3">* = Pflichtfelder</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* Name"
+                  placeholder="* Nachname"
                   onChange={this.onChange}
                   value={this.state.name}
                   name="name"
                   error={errors.name}
                 />
+
+                <TextFieldGroup
+                  placeholder="* Vorname"
+                  onChange={this.onChange}
+                  value={this.state.vorname}
+                  name="vorname"
+                  error={errors.vorname}
+                />
+
                 <TextFieldGroup
                   placeholder="* Tum-ID"
                   onChange={this.onChange}

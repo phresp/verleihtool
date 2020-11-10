@@ -28,6 +28,7 @@ class Dashboard extends Component {
       leihen = rentals.map((rents) => (
         <tr key={rents._id}>
           <td>{rents.name}</td>
+          <td>{rents.vorname}</td>
           <td>{rents.tumid}</td>
           <td>{rents.email}</td>
           <td>
@@ -55,6 +56,7 @@ class Dashboard extends Component {
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Vorname</th>
                 <th>TUM-ID</th>
                 <th>Email</th>
                 <th></th>

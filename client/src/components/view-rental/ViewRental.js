@@ -21,6 +21,7 @@ class ViewRental extends Component {
     this.state = {
       processable: true,
       name: "",
+      vorname: "",
       tumid: "",
       email: "",
       adresse: "",
@@ -62,6 +63,7 @@ class ViewRental extends Component {
 
       //If rental field doesn't exist, make empty string
       rental.name = !isEmpty(rental.name) ? rental.name : "";
+      rental.vorname = !isEmpty(rental.vorname) ? rental.vorname : "";
       rental.tumid = !isEmpty(rental.tumid) ? rental.tumid : "";
       rental.email = !isEmpty(rental.email) ? rental.email : "";
       rental.adresse = !isEmpty(rental.adresse) ? rental.adresse : "";
@@ -111,6 +113,7 @@ class ViewRental extends Component {
       this.setState({
         id: rental._id,
         name: rental.name,
+        vorname: rental.vorname,
         tumid: rental.tumid,
         email: rental.email,
         adresse: rental.adresse,
@@ -135,6 +138,7 @@ class ViewRental extends Component {
     e.preventDefault();
     const rentalData = {
       name: this.state.name,
+      vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
       adresse: this.state.adresse,
@@ -161,6 +165,7 @@ class ViewRental extends Component {
     e.preventDefault();
     const rentalData = {
       name: this.state.name,
+      vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
       adresse: this.state.adresse,
@@ -226,6 +231,15 @@ class ViewRental extends Component {
                   value={this.state.name}
                   name="name"
                   error={errors.name}
+                  disabled={this.state.processable ? "disabled" : ""}
+                />
+                <h6>Vorname:</h6>
+                <TextFieldGroup
+                  placeholder="* 'Vorname'"
+                  onChange={this.onChange}
+                  value={this.state.vorname}
+                  name="vorname"
+                  error={errors.vorname}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
                 <h6>TUM-ID:</h6>

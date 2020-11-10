@@ -5,6 +5,7 @@ module.exports = function validateRentalsInput(data) {
   let errors = {};
 
   data.name = !isEmpty(data.name) ? data.name : "";
+  data.vorname = !isEmpty(data.vorname) ? data.vorname : "";
   data.tumid = !isEmpty(data.tumid) ? data.tumid : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.adresse = !isEmpty(data.adresse) ? data.adresse : "";
@@ -16,6 +17,10 @@ module.exports = function validateRentalsInput(data) {
 
   if (Validator.isEmpty(data.name)) {
     errors.name = "Das Name Feld darf nicht leer sein";
+  }
+
+  if (Validator.isEmpty(data.vorname)) {
+    errors.vorname = "Das Vorname Feld darf nicht leer sein";
   }
 
   if (Validator.isEmpty(data.email)) {

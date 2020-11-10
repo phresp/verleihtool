@@ -83,6 +83,7 @@ router.post(
     //Get fields
     const rentalsFields = {};
     rentalsFields.name = req.body.name;
+    rentalsFields.vorname = req.body.vorname;
     rentalsFields.tumid = req.body.tumid;
     rentalsFields.email = req.body.email;
     rentalsFields.adresse = req.body.adresse;
@@ -136,6 +137,7 @@ router.post(
     //Get fields
     const rentalsFields = {};
     rentalsFields.name = req.body.name;
+    rentalsFields.vorname = req.body.vorname;
     rentalsFields.tumid = req.body.tumid;
     rentalsFields.email = req.body.email;
     rentalsFields.adresse = req.body.adresse;
@@ -210,7 +212,7 @@ router.post(
   (req, res) => {
     var issuer = req.body.user.user.name;
     const formdata = {
-      name: req.body.name,
+      name: req.body.name + ", " + req.body.vorname,
       tumid: req.body.tumid,
       adresse: req.body.adresse,
       telefonnummer: req.body.telefonnummer,

@@ -3,71 +3,74 @@ const Schema = mongoose.Schema;
 
 //Create Schema
 const RentalsSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
+  name: {
+    type: String,
+    required: true,
+  },
+  vorname: {
+    type: String,
+    required: true,
+  },
+  tumid: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  adresse: {
+    type: String,
+    required: true,
+  },
+  telefonnummer: {
+    type: String,
+    required: true,
+  },
+  veranstaltung: {
+    type: String,
+  },
+  vertragslaufzeit: {
+    von: {
+      type: Date,
     },
-    tumid: {
-        type: String,
-        required: true,
+    bis: {
+      type: Date,
     },
-    email: {
-        type: String,
-        required: true,
+  },
+  betreuer: {
+    type: String,
+  },
+  angeschrieben: {
+    type: Date,
+  },
+  rückmeldung: {
+    type: Date,
+  },
+  leihscheinverschickt: {
+    type: Date,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  leihobjekt: {
+    device: {
+      type: String,
     },
-    adresse: {
-        type: String,
-        required: true,
+    inventorynumber: {
+      type: String,
     },
-    telefonnummer: {
-        type: String,
-        required: true,
+    rbgnumber: {
+      type: String,
     },
-    veranstaltung: {
-        type: String
+    serialnumber: {
+      type: String,
     },
-    vertragslaufzeit: {
-        von: {
-            type: Date
-        },
-        bis: {
-            type: Date
-        }
+    details: {
+      type: String,
     },
-    betreuer: {
-        type: String
-    },
-    angeschrieben: {
-        type: Date
-    },
-    rückmeldung: {
-        type: Date
-    },
-    leihscheinverschickt: {
-        type: Date
-    },
-    date: {
-        type: Date,
-        default: Date.now,
-    },
-    leihobjekt:{
-        device:{
-            type: String
-        },
-        inventorynumber:{
-            type:String
-        },
-        rbgnumber:{
-            type: String
-        },
-        serialnumber:{
-            type: String
-        },
-        details:{
-            type: String
-        },
-    }
-
+  },
 });
 
 module.exports = Rentals = mongoose.model("rentals", RentalsSchema);
