@@ -74,33 +74,18 @@ export const deleteRental = (id) => (dispatch) => {
 };
 
 //downloadRentalform
-export const downloadRentalform = () => (dispatch) => {
+export const downloadRentalform = (rentalData) => (dispatch) => {
   axios({
     url: "/api/rentals/download/rentalform",
     method: "POST",
-    responseType: "blob", // important
+    responseType: "blob",
+    data: rentalData,
   }).then((response) => {
     const url = window.URL.createObjectURL(new Blob([response.data]));
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "file.pdf");
+    link.setAttribute("download", `Leihschein-${rentalData.tumid}.pdf`);
     document.body.appendChild(link);
     link.click();
   });
-  // axios
-  //   .post("/api/rentals/download/rentalform")
-  //   .then((res) => {
-  //     const url = window.URL.createObjectURL(new Blob([res.data]));
-  //     const link = document.createElement("a");
-  //     link.href = url;
-  //     link.setAttribute("download", "file.pdf"); //or any other extension
-  //     document.body.appendChild(link);
-  //     link.click();
-  //   })
-  //   .catch((err) =>
-  //     dispatch({
-  //       type: GET_ERRORS,
-  //       payload: err.response.data,
-  //     })
-  //   );
 };

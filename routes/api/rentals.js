@@ -7,20 +7,22 @@ const passport = require("passport");
 const pdftk = require("node-pdftk");
 const fs = require("fs");
 const path = require("path");
+const moment = require("moment");
 
-//pdftk config
+//pdftk config TOTO: Make Environment Variable
 pdftk.configure({
   bin: "H:\\PDFtk\\bin\\pdftk.exe",
 });
 
-//Import Leihschein-Template-Path
-const formData = {};
+//Leihschein-Template-Path
 const pdfTemplatePath = path.resolve(
   __dirname + "../../../templates/Leihschein-Template.pdf"
 );
-const pdfOutputPath = path.resolve(
-  __dirname + "../../../templates/Leihschein-Template-filled.pdf"
-);
+
+//PDF Outout Path Keep for debugging purposes
+// const pdfOutputPath = path.resolve(
+//   __dirname + "../../../templates/Leihschein-Template-filled.pdf"
+// );
 
 //Load input validation
 const validateRentalsInput = require("../../validation/rentals");
@@ -206,16 +208,23 @@ router.post(
   "/download/rentalform",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    var issuer = req.body.user.user.name;
     const formdata = {
-      name: "Philipp",
-      tumid: "tumid",
+      name: req.body.name,
+      tumid: req.body.tumid,
+      adresse: req.body.adresse,
+      telefonnummer: req.body.telefonnummer,
+      aussteller: issuer,
+      nutzung: req.body.veranstaltung,
+      rückgabe: "todo",
+      device: req.body.device,
+      details: req.body.details,
+      date: moment.utc(Date.now()).format("DD-MM-YYYY"),
     };
-    console.log(pdfTemplatePath);
     pdftk
       .input(pdfTemplatePath)
       .fillForm(formdata)
-      .flatten()
-      .output(pdfOutputPath)
+      .output()
       .then((buf) => {
         res.type("application/pdf");
         res.send(buf);

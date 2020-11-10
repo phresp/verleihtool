@@ -16,10 +16,6 @@ class ViewRental extends Component {
     this.props.getRentalOfId(this.props.match.params.id);
   }
 
-  onDownloadClick() {
-    this.props.downloadRentalform();
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -52,6 +48,8 @@ class ViewRental extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
+
+    const { user } = this.props.auth;
 
     if (nextProps.rentals.rental) {
       const rental = nextProps.rentals.rental;
@@ -133,6 +131,32 @@ class ViewRental extends Component {
     }
   }
 
+  onDownloadClick(e) {
+    e.preventDefault();
+    const rentalData = {
+      name: this.state.name,
+      tumid: this.state.tumid,
+      email: this.state.email,
+      adresse: this.state.adresse,
+      telefonnummer: this.state.telefonnummer,
+      veranstaltung: this.state.veranstaltung,
+      von: this.state.von,
+      bis: this.state.bis,
+      betreuer: this.state.betreuer,
+      angeschrieben: this.state.angeschrieben,
+      rückmeldung: this.state.rückmeldung,
+      leihscheinverschickt: this.state.leihscheinverschickt,
+      device: this.state.device,
+      inventorynumber: this.state.inventorynumber,
+      rbgnumber: this.state.rbgnumber,
+      serialnumber: this.state.serialnumber,
+      details: this.state.details,
+      user: this.props.auth,
+    };
+    console.log(rentalData.user);
+    this.props.downloadRentalform(rentalData);
+  }
+
   onSubmit(e) {
     e.preventDefault();
     const rentalData = {
@@ -186,6 +210,7 @@ class ViewRental extends Component {
                         Bearbeiten an/aus
                       </button>
                       <button
+                        type="button"
                         onClick={this.onDownloadClick.bind(this)}
                         className="btn btn-info"
                       >

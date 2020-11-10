@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "fill-pdf-utf8": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
     "mongoose": "^5.10.10",
     "node-gyp": "^7.1.2",
     "node-pdftk": "^2.1.3",
