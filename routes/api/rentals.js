@@ -221,11 +221,11 @@ router.post(
       rückgabe: "todo",
       device: req.body.device,
       details: req.body.details,
-      date: moment.utc(Date.now()).format("DD-MM-YYYY"),
     };
     pdftk
       .input(pdfTemplatePath)
       .fillForm(formdata)
+      .flatten()
       .output()
       .then((buf) => {
         res.type("application/pdf");

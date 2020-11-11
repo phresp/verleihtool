@@ -191,32 +191,8 @@ class CreateRental extends Component {
                   error={errors.device}
                 />
 
-                <TextFieldGroup
-                  placeholder="Inventarnummer"
-                  onChange={this.onChange}
-                  value={this.state.inventorynumber}
-                  name="inventorynumber"
-                  error={errors.inventorynumber}
-                />
-
-                <TextFieldGroup
-                  placeholder="RBG-Nummer"
-                  onChange={this.onChange}
-                  value={this.state.rbgnumber}
-                  name="rbgnumber"
-                  error={errors.rbgnumber}
-                />
-
-                <TextFieldGroup
-                  placeholder="Seriennummer"
-                  onChange={this.onChange}
-                  value={this.state.serialnumber}
-                  name="serialnumber"
-                  error={errors.serialnumber}
-                />
-
                 <TextAreaFieldGroup
-                  placeholder="Details"
+                  placeholder="Bemerkungen"
                   onChange={this.onChange}
                   value={this.state.details}
                   name="details"

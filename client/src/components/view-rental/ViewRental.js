@@ -347,45 +347,18 @@ class ViewRental extends Component {
                   error={errors.rückmeldung}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-                <h6>Leigerät:</h6>
+                <h6>Leihgerät:</h6>
                 <TextFieldGroup
-                  placeholder="Leihgerät"
+                  placeholder="Leihgeräte"
                   onChange={this.onChange}
                   value={this.state.device}
                   name="device"
                   error={errors.device}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-                <h6>Inventarnummer Leihgerät:</h6>
-                <TextFieldGroup
-                  placeholder="Inventarnummer"
-                  onChange={this.onChange}
-                  value={this.state.inventorynumber}
-                  name="inventorynumber"
-                  error={errors.inventorynumber}
-                  disabled={this.state.processable ? "disabled" : ""}
-                />
-                <h6>RBG-Nummer Leihgerät:</h6>
-                <TextFieldGroup
-                  placeholder="RBG-Nummer"
-                  onChange={this.onChange}
-                  value={this.state.rbgnumber}
-                  name="rbgnumber"
-                  error={errors.rbgnumber}
-                  disabled={this.state.processable ? "disabled" : ""}
-                />
-                <h6>Seriennummer Leihgerät:</h6>
-                <TextFieldGroup
-                  placeholder="Seriennummer"
-                  onChange={this.onChange}
-                  value={this.state.serialnumber}
-                  name="serialnumber"
-                  error={errors.serialnumber}
-                  disabled={this.state.processable ? "disabled" : ""}
-                />
                 <h6>Details:</h6>
                 <TextAreaFieldGroup
-                  placeholder="Details"
+                  placeholder="Bemerkungen"
                   onChange={this.onChange}
                   value={this.state.details}
                   name="details"
