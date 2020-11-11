@@ -10,9 +10,9 @@ const path = require("path");
 const moment = require("moment");
 
 //pdftk config TOTO: Make Environment Variable
-pdftk.configure({
-  bin: "H:\\PDFtk\\bin\\pdftk.exe",
-});
+//pdftk.configure({
+//  bin: "H:\\PDFtk\\bin\\pdftk.exe",
+//});
 
 //Leihschein-Template-Path
 const pdfTemplatePath = path.resolve(
