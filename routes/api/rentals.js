@@ -229,7 +229,7 @@ router.post(
         res.send(buf);
       })
       .catch((err) => {
-        res.status(404).json({ "something wrong here" });
+        res.status(404).json("something wrong here" + { err });
       });
   }
 );
