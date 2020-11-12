@@ -16,7 +16,7 @@ const moment = require("moment");
 
 //Leihschein-Template-Path
 const pdfTemplatePath = path.resolve(
-  __dirname + "../../../templates/Leihschein-Template-neu.pdf"
+  __dirname + "../../../templates/Leihschein-Template.pdf"
 );
 
 //PDF Outout Path Keep for debugging purposes
@@ -229,7 +229,7 @@ router.post(
         res.send(buf);
       })
       .catch((err) => {
-        res.status(404).json({ err });
+        res.status(404).json({ "something wrong here" });
       });
   }
 );
