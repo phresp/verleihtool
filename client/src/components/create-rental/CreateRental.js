@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 import { createRental } from "../../actions/rentalActions";
 
 class CreateRental extends Component {
@@ -14,7 +15,9 @@ class CreateRental extends Component {
       vorname: "",
       tumid: "",
       email: "",
-      adresse: "",
+      strasse: "",
+      plz: "",
+      ort: "",
       telefonnummer: "",
       veranstaltung: "",
       von: "",
@@ -23,11 +26,10 @@ class CreateRental extends Component {
       angeschrieben: "",
       rückmeldung: "",
       leihscheinverschickt: "",
+      rückgabe: "",
       device: "",
-      inventorynumber: "",
-      rbgnumber: "",
-      serialnumber: "",
       details: "",
+      status: "",
       errors: {},
     };
 
@@ -49,7 +51,9 @@ class CreateRental extends Component {
       vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
-      adresse: this.state.adresse,
+      strasse: this.state.strasse,
+      plz: this.state.plz,
+      ort: this.state.ort,
       telefonnummer: this.state.telefonnummer,
       veranstaltung: this.state.veranstaltung,
       von: this.state.von,
@@ -58,11 +62,10 @@ class CreateRental extends Component {
       angeschrieben: this.state.angeschrieben,
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
+      rückgabe: this.state.rückgabe,
       device: this.state.device,
-      inventorynumber: this.state.inventorynumber,
-      rbgnumber: this.state.rbgnumber,
-      serialnumber: this.state.serialnumber,
       details: this.state.details,
+      status: this.state.status,
     };
 
     this.props.createRental(rentalData, this.props.history);
@@ -74,6 +77,15 @@ class CreateRental extends Component {
 
   render() {
     const errors = this.state.errors;
+
+    const statusOptions = [
+      { label: "* Status auswählen", value: 0 },
+      { label: "Unvollständig", value: "Unvollständig" },
+      { label: "Vollständig", value: "Vollständig" },
+      { label: "Aktiv", value: "Aktiv" },
+      { label: "Abgeschlossen", value: "Abgeschlossen" },
+    ];
+
     return (
       <div className={"create-rental"}>
         <div className="container">
@@ -92,7 +104,6 @@ class CreateRental extends Component {
                   name="name"
                   error={errors.name}
                 />
-
                 <TextFieldGroup
                   placeholder="* Vorname"
                   onChange={this.onChange}
@@ -102,28 +113,43 @@ class CreateRental extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="* Tum-ID"
+                  placeholder="Tum-ID"
                   onChange={this.onChange}
                   value={this.state.tumid}
                   name="tumid"
                   error={errors.tumid}
                 />
                 <TextFieldGroup
-                  placeholder="* Email"
+                  placeholder="Email"
                   onChange={this.onChange}
                   value={this.state.email}
                   name="email"
                   error={errors.email}
                 />
-                <TextAreaFieldGroup
-                  placeholder="* Adresse"
+                <h6>Anschrift</h6>
+                <TextFieldGroup
+                  placeholder="Straße"
                   onChange={this.onChange}
-                  value={this.state.adresse}
-                  name="adresse"
-                  error={errors.adresse}
+                  value={this.state.strasse}
+                  name="strasse"
+                  error={errors.strasse}
                 />
                 <TextFieldGroup
-                  placeholder="* Telefonnummer"
+                  placeholder="Postleitzahl"
+                  onChange={this.onChange}
+                  value={this.state.plz}
+                  name="plz"
+                  error={errors.plz}
+                />
+                <TextFieldGroup
+                  placeholder="Ort"
+                  onChange={this.onChange}
+                  value={this.state.ort}
+                  name="ort"
+                  error={errors.ort}
+                />
+                <TextFieldGroup
+                  placeholder="Telefonnummer"
                   onChange={this.onChange}
                   value={this.state.telefonnummer}
                   name="telefonnummer"
@@ -183,6 +209,14 @@ class CreateRental extends Component {
                   name={"rückmeldung"}
                   error={errors.rückmeldung}
                 />
+                <h6>Vorraussichtliche Rückgabe:</h6>
+                <TextFieldGroup
+                  type={"date"}
+                  onChange={this.onChange}
+                  value={this.state.rückgabe}
+                  name={"rückgabe"}
+                  error={errors.rückgabe}
+                />
                 <TextFieldGroup
                   placeholder="Leihgerät"
                   onChange={this.onChange}
@@ -191,36 +225,22 @@ class CreateRental extends Component {
                   error={errors.device}
                 />
 
-                <TextFieldGroup
-                  placeholder="Inventarnummer"
-                  onChange={this.onChange}
-                  value={this.state.inventorynumber}
-                  name="inventorynumber"
-                  error={errors.inventorynumber}
-                />
-
-                <TextFieldGroup
-                  placeholder="RBG-Nummer"
-                  onChange={this.onChange}
-                  value={this.state.rbgnumber}
-                  name="rbgnumber"
-                  error={errors.rbgnumber}
-                />
-
-                <TextFieldGroup
-                  placeholder="Seriennummer"
-                  onChange={this.onChange}
-                  value={this.state.serialnumber}
-                  name="serialnumber"
-                  error={errors.serialnumber}
-                />
-
                 <TextAreaFieldGroup
-                  placeholder="Details"
+                  placeholder="Bemerkungen"
                   onChange={this.onChange}
                   value={this.state.details}
                   name="details"
                   error={errors.details}
+                />
+
+                <SelectListGroup
+                  placeholder="* Status"
+                  onChange={this.onChange}
+                  value={this.state.status}
+                  name="status"
+                  error={errors.status}
+                  options={statusOptions}
+                  info={"Status der Leihe"}
                 />
 
                 <input

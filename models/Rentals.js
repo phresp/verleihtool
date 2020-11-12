@@ -13,19 +13,23 @@ const RentalsSchema = new Schema({
   },
   tumid: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
-    required: true,
   },
   adresse: {
-    type: String,
-    required: true,
+    strasse: {
+      type: String,
+    },
+    ort: {
+      type: String,
+    },
+    plz: {
+      type: String,
+    },
   },
   telefonnummer: {
     type: String,
-    required: true,
   },
   veranstaltung: {
     type: String,
@@ -54,22 +58,19 @@ const RentalsSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  status: {
+    type: String,
+  },
+  rückgabe: {
+    type: Date,
+  },
   leihobjekt: {
     device: {
       type: String,
     },
-    inventorynumber: {
-      type: String,
-    },
-    rbgnumber: {
-      type: String,
-    },
-    serialnumber: {
-      type: String,
-    },
-    details: {
-      type: String,
-    },
+  },
+  details: {
+    type: String,
   },
 });
 

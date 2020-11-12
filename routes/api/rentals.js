@@ -10,13 +10,13 @@ const path = require("path");
 const moment = require("moment");
 
 //pdftk config TOTO: Make Environment Variable
-pdftk.configure({
-  bin: "H:\\PDFtk\\bin\\pdftk.exe",
-});
+//pdftk.configure({
+//  bin: "H:\\PDFtk\\bin\\pdftk.exe",
+//});
 
 //Leihschein-Template-Path
 const pdfTemplatePath = path.resolve(
-  __dirname + "../../../templates/Leihschein-Template.pdf"
+  __dirname + "../../../templates/Leihschein-Template-neu.pdf"
 );
 
 //PDF Outout Path Keep for debugging purposes
@@ -84,10 +84,13 @@ router.post(
     const rentalsFields = {};
     rentalsFields.name = req.body.name;
     rentalsFields.vorname = req.body.vorname;
-    rentalsFields.tumid = req.body.tumid;
-    rentalsFields.email = req.body.email;
-    rentalsFields.adresse = req.body.adresse;
-    rentalsFields.telefonnummer = req.body.telefonnummer;
+    if (req.body.tumid) rentalsFields.tumid = req.body.tumid;
+    if (req.body.email) rentalsFields.email = req.body.email;
+    //Anschrift
+    rentalsFields.adresse = {};
+    if (req.body.strasse) rentalsFields.adresse.strasse = req.body.strasse;
+    if (req.body.ort) rentalsFields.adresse.ort = req.body.ort;
+    if (req.body.plz) rentalsFields.adresse.plz = req.body.plz;
 
     if (req.body.telefonnummer)
       rentalsFields.telefonnummer = req.body.telefonnummer;
@@ -105,18 +108,13 @@ router.post(
     if (req.body.rückmeldung) rentalsFields.rückmeldung = req.body.rückmeldung;
     if (req.body.leihscheinverschickt)
       rentalsFields.leihscheinverschickt = req.body.leihscheinverschickt;
+    if (req.body.rückgabe) rentalsFields.rückgabe = req.body.rückgabe;
+    if (req.body.details) rentalsFields.details = req.body.details;
+    if (req.body.status) rentalsFields.status = req.body.status;
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
     if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
-    if (req.body.inventorynumber)
-      rentalsFields.leihobjekt.inventorynumber = req.body.inventorynumber;
-    if (req.body.rbgnumber)
-      rentalsFields.leihobjekt.rbgnumber = req.body.rbgnumber;
-    if (req.body.serialnumber)
-      rentalsFields.leihobjekt.serialnumber = req.body.serialnumber;
-    if (req.body.details) rentalsFields.leihobjekt.details = req.body.details;
-
     new Rentals(rentalsFields).save().then((rentals) => res.json(rentals));
   }
 );
@@ -138,10 +136,13 @@ router.post(
     const rentalsFields = {};
     rentalsFields.name = req.body.name;
     rentalsFields.vorname = req.body.vorname;
-    rentalsFields.tumid = req.body.tumid;
-    rentalsFields.email = req.body.email;
-    rentalsFields.adresse = req.body.adresse;
-    rentalsFields.telefonnummer = req.body.telefonnummer;
+    if (req.body.tumid) rentalsFields.tumid = req.body.tumid;
+    if (req.body.email) rentalsFields.email = req.body.email;
+    //Anschrift
+    rentalsFields.adresse = {};
+    if (req.body.strasse) rentalsFields.adresse.strasse = req.body.strasse;
+    if (req.body.ort) rentalsFields.adresse.ort = req.body.ort;
+    if (req.body.plz) rentalsFields.adresse.plz = req.body.plz;
 
     if (req.body.telefonnummer)
       rentalsFields.telefonnummer = req.body.telefonnummer;
@@ -159,18 +160,13 @@ router.post(
     if (req.body.rückmeldung) rentalsFields.rückmeldung = req.body.rückmeldung;
     if (req.body.leihscheinverschickt)
       rentalsFields.leihscheinverschickt = req.body.leihscheinverschickt;
+    if (req.body.rückgabe) rentalsFields.rückgabe = req.body.rückgabe;
+    if (req.body.details) rentalsFields.details = req.body.details;
+    if (req.body.status) rentalsFields.status = req.body.status;
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
     if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
-    if (req.body.inventorynumber)
-      rentalsFields.leihobjekt.inventorynumber = req.body.inventorynumber;
-    if (req.body.rbgnumber)
-      rentalsFields.leihobjekt.rbgnumber = req.body.rbgnumber;
-    if (req.body.serialnumber)
-      rentalsFields.leihobjekt.serialnumber = req.body.serialnumber;
-    if (req.body.details) rentalsFields.leihobjekt.details = req.body.details;
-
     //Update
 
     Rentals.findOneAndUpdate(
@@ -210,22 +206,23 @@ router.post(
   "/download/rentalform",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    var issuer = req.body.user.user.name;
     const formdata = {
       name: req.body.name + ", " + req.body.vorname,
       tumid: req.body.tumid,
-      adresse: req.body.adresse,
+      adresse1: req.body.strasse,
+      adresse2: req.body.plz + ", " + req.body.ort,
       telefonnummer: req.body.telefonnummer,
-      aussteller: issuer,
-      nutzung: req.body.veranstaltung,
-      rückgabe: "todo",
-      device: req.body.device,
-      details: req.body.details,
-      date: moment.utc(Date.now()).format("DD-MM-YYYY"),
+      rückgabe: moment.utc(req.body.rückgabe).format("DD-MM-YYYY"),
+      devicerow1: req.body.device,
+      devicerow2: "reihe2",
+      devicerow3: "reihe3",
+      devicerow4: "reihe4",
+      devicerow5: "reihe5",
     };
     pdftk
       .input(pdfTemplatePath)
       .fillForm(formdata)
+      .flatten()
       .output()
       .then((buf) => {
         res.type("application/pdf");
