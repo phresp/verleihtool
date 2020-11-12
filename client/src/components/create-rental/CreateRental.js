@@ -14,7 +14,9 @@ class CreateRental extends Component {
       vorname: "",
       tumid: "",
       email: "",
-      adresse: "",
+      strasse: "",
+      plz: "",
+      ort: "",
       telefonnummer: "",
       veranstaltung: "",
       von: "",
@@ -23,10 +25,8 @@ class CreateRental extends Component {
       angeschrieben: "",
       rückmeldung: "",
       leihscheinverschickt: "",
+      rückgabe: "",
       device: "",
-      inventorynumber: "",
-      rbgnumber: "",
-      serialnumber: "",
       details: "",
       errors: {},
     };
@@ -49,7 +49,9 @@ class CreateRental extends Component {
       vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
-      adresse: this.state.adresse,
+      strasse: this.state.strasse,
+      plz: this.state.plz,
+      ort: this.state.ort,
       telefonnummer: this.state.telefonnummer,
       veranstaltung: this.state.veranstaltung,
       von: this.state.von,
@@ -58,10 +60,8 @@ class CreateRental extends Component {
       angeschrieben: this.state.angeschrieben,
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
+      rückgabe: this.state.rückgabe,
       device: this.state.device,
-      inventorynumber: this.state.inventorynumber,
-      rbgnumber: this.state.rbgnumber,
-      serialnumber: this.state.serialnumber,
       details: this.state.details,
     };
 
@@ -102,28 +102,43 @@ class CreateRental extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="* Tum-ID"
+                  placeholder="Tum-ID"
                   onChange={this.onChange}
                   value={this.state.tumid}
                   name="tumid"
                   error={errors.tumid}
                 />
                 <TextFieldGroup
-                  placeholder="* Email"
+                  placeholder="Email"
                   onChange={this.onChange}
                   value={this.state.email}
                   name="email"
                   error={errors.email}
                 />
-                <TextAreaFieldGroup
-                  placeholder="* Adresse"
+                <h6>Anschrift</h6>
+                <TextFieldGroup
+                  placeholder="Straße"
                   onChange={this.onChange}
-                  value={this.state.adresse}
-                  name="adresse"
-                  error={errors.adresse}
+                  value={this.state.strasse}
+                  name="strasse"
+                  error={errors.strasse}
                 />
                 <TextFieldGroup
-                  placeholder="* Telefonnummer"
+                  placeholder="Postleitzahl"
+                  onChange={this.onChange}
+                  value={this.state.plz}
+                  name="plz"
+                  error={errors.plz}
+                />
+                <TextFieldGroup
+                  placeholder="Ort"
+                  onChange={this.onChange}
+                  value={this.state.ort}
+                  name="ort"
+                  error={errors.ort}
+                />
+                <TextFieldGroup
+                  placeholder="Telefonnummer"
                   onChange={this.onChange}
                   value={this.state.telefonnummer}
                   name="telefonnummer"
@@ -182,6 +197,14 @@ class CreateRental extends Component {
                   value={this.state.rückmeldung}
                   name={"rückmeldung"}
                   error={errors.rückmeldung}
+                />
+                <h6>Vorraussichtliche Rückgabe:</h6>
+                <TextFieldGroup
+                  type={"date"}
+                  onChange={this.onChange}
+                  value={this.state.rückgabe}
+                  name={"rückgabe"}
+                  error={errors.rückgabe}
                 />
                 <TextFieldGroup
                   placeholder="Leihgerät"

@@ -24,7 +24,9 @@ class ViewRental extends Component {
       vorname: "",
       tumid: "",
       email: "",
-      adresse: "",
+      strasse: "",
+      plz: "",
+      ort: "",
       telefonnummer: "",
       veranstaltung: "",
       von: "",
@@ -33,10 +35,8 @@ class ViewRental extends Component {
       angeschrieben: "",
       rückmeldung: "",
       leihscheinverschickt: "",
+      rückgabe: "",
       device: "",
-      inventorynumber: "",
-      rbgnumber: "",
-      serialnumber: "",
       details: "",
       errors: {},
     };
@@ -60,13 +60,22 @@ class ViewRental extends Component {
       rental.vertragslaufzeit = !isEmpty(rental.vertragslaufzeit)
         ? rental.vertragslaufzeit
         : {};
+      rental.adresse = !isEmpty(rental.adresse) ? rental.adresse : {};
 
       //If rental field doesn't exist, make empty string
       rental.name = !isEmpty(rental.name) ? rental.name : "";
       rental.vorname = !isEmpty(rental.vorname) ? rental.vorname : "";
       rental.tumid = !isEmpty(rental.tumid) ? rental.tumid : "";
       rental.email = !isEmpty(rental.email) ? rental.email : "";
-      rental.adresse = !isEmpty(rental.adresse) ? rental.adresse : "";
+      rental.adresse.strasse = !isEmpty(rental.adresse.strasse)
+        ? rental.adresse.strasse
+        : "";
+      rental.adresse.plz = !isEmpty(rental.adresse.plz)
+        ? rental.adresse.plz
+        : "";
+      rental.adresse.ort = !isEmpty(rental.adresse.ort)
+        ? rental.adresse.ort
+        : "";
       rental.telefonnummer = !isEmpty(rental.telefonnummer)
         ? rental.telefonnummer
         : "";
@@ -91,23 +100,13 @@ class ViewRental extends Component {
       rental.leihscheinverschickt = !isEmpty(rental.leihscheinverschickt)
         ? rental.leihscheinverschickt
         : "";
+      rental.rückgabe = !isEmpty(rental.rückgabe) ? rental.rückgabe : "";
 
       //Leihgerätefelder
       rental.device = !isEmpty(rental.leihobjekt.device)
         ? rental.leihobjekt.device
         : "";
-      rental.inventorynumber = !isEmpty(rental.leihobjekt.inventorynumber)
-        ? rental.leihobjekt.inventorynumber
-        : "";
-      rental.rbgnumber = !isEmpty(rental.leihobjekt.rbgnumber)
-        ? rental.leihobjekt.rbgnumber
-        : "";
-      rental.serialnumber = !isEmpty(rental.leihobjekt.serialnumber)
-        ? rental.leihobjekt.serialnumber
-        : "";
-      rental.details = !isEmpty(rental.leihobjekt.details)
-        ? rental.leihobjekt.details
-        : "";
+      rental.details = !isEmpty(rental.details) ? rental.details : "";
 
       //Set component fields state
       this.setState({
@@ -116,7 +115,9 @@ class ViewRental extends Component {
         vorname: rental.vorname,
         tumid: rental.tumid,
         email: rental.email,
-        adresse: rental.adresse,
+        strasse: rental.adresse.strasse,
+        plz: rental.adresse.plz,
+        ort: rental.adresse.ort,
         telefonnummer: rental.telefonnummer,
         veranstaltung: rental.veranstaltung,
         von: rental.vertragslaufzeit.von,
@@ -125,10 +126,8 @@ class ViewRental extends Component {
         angeschrieben: rental.angeschrieben,
         rückmeldung: rental.rückmeldung,
         leihscheinverschickt: rental.leihscheinverschickt,
+        rückgabe: rental.rückgabe,
         device: rental.device,
-        inventorynumber: rental.inventorynumber,
-        rbgnumber: rental.rbgnumber,
-        serialnumber: rental.serialnumber,
         details: rental.details,
       });
     }
@@ -141,7 +140,9 @@ class ViewRental extends Component {
       vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
-      adresse: this.state.adresse,
+      strasse: this.state.strasse,
+      plz: this.state.plz,
+      ort: this.state.ort,
       telefonnummer: this.state.telefonnummer,
       veranstaltung: this.state.veranstaltung,
       von: this.state.von,
@@ -150,14 +151,11 @@ class ViewRental extends Component {
       angeschrieben: this.state.angeschrieben,
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
+      rückgabe: this.state.rückgabe,
       device: this.state.device,
-      inventorynumber: this.state.inventorynumber,
-      rbgnumber: this.state.rbgnumber,
-      serialnumber: this.state.serialnumber,
       details: this.state.details,
       user: this.props.auth,
     };
-    console.log(rentalData.user);
     this.props.downloadRentalform(rentalData);
   }
 
@@ -168,7 +166,9 @@ class ViewRental extends Component {
       vorname: this.state.vorname,
       tumid: this.state.tumid,
       email: this.state.email,
-      adresse: this.state.adresse,
+      strasse: this.state.strasse,
+      plz: this.state.plz,
+      ort: this.state.ort,
       telefonnummer: this.state.telefonnummer,
       veranstaltung: this.state.veranstaltung,
       von: this.state.von,
@@ -177,10 +177,8 @@ class ViewRental extends Component {
       angeschrieben: this.state.angeschrieben,
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
+      rückgabe: this.state.rückgabe,
       device: this.state.device,
-      inventorynumber: this.state.inventorynumber,
-      rbgnumber: this.state.rbgnumber,
-      serialnumber: this.state.serialnumber,
       details: this.state.details,
     };
     this.props.updateRental(this.state.id, rentalData, this.props.history);
@@ -244,7 +242,7 @@ class ViewRental extends Component {
                 />
                 <h6>TUM-ID:</h6>
                 <TextFieldGroup
-                  placeholder="* TUM-ID"
+                  placeholder="TUM-ID"
                   onChange={this.onChange}
                   value={this.state.tumid}
                   name="tumid"
@@ -253,7 +251,7 @@ class ViewRental extends Component {
                 />
                 <h6>Email-Adresse:</h6>
                 <TextFieldGroup
-                  placeholder="* Email"
+                  placeholder="Email"
                   onChange={this.onChange}
                   value={this.state.email}
                   name="email"
@@ -261,17 +259,36 @@ class ViewRental extends Component {
                   disabled={this.state.processable ? "disabled" : ""}
                 />
                 <h6>Anschrift:</h6>
-                <TextAreaFieldGroup
-                  placeholder="* Anschrift"
+                <h6>Straße:</h6>
+                <TextFieldGroup
+                  placeholder="Straße"
                   onChange={this.onChange}
-                  value={this.state.adresse}
-                  name="adresse"
-                  error={errors.adresse}
+                  value={this.state.strasse}
+                  name="strasse"
+                  error={errors.strasse}
+                  disabled={this.state.processable ? "disabled" : ""}
+                />
+                <h6>Postleitzahl:</h6>
+                <TextFieldGroup
+                  placeholder="Postleitzahl"
+                  onChange={this.onChange}
+                  value={this.state.plz}
+                  name="plz"
+                  error={errors.plz}
+                  disabled={this.state.processable ? "disabled" : ""}
+                />
+                <h6>Ort:</h6>
+                <TextFieldGroup
+                  placeholder="Ort"
+                  onChange={this.onChange}
+                  value={this.state.ort}
+                  name="ort"
+                  error={errors.ort}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
                 <h6>Telefonnummer:</h6>
                 <TextFieldGroup
-                  placeholder="* Telefonnummer"
+                  placeholder="Telefonnummer"
                   onChange={this.onChange}
                   value={this.state.telefonnummer}
                   name="telefonnummer"
@@ -345,6 +362,15 @@ class ViewRental extends Component {
                     .format("YYYY-MM-DD")}
                   name={"rückmeldung"}
                   error={errors.rückmeldung}
+                  disabled={this.state.processable ? "disabled" : ""}
+                />
+                <h6>Vorraussichtliche Rückgabe:</h6>
+                <TextFieldGroup
+                  type={"date"}
+                  onChange={this.onChange}
+                  value={moment.utc(this.state.rückgabe).format("YYYY-MM-DD")}
+                  name={"rückgabe"}
+                  error={errors.rückgabe}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
                 <h6>Leihgerät:</h6>

@@ -84,10 +84,13 @@ router.post(
     const rentalsFields = {};
     rentalsFields.name = req.body.name;
     rentalsFields.vorname = req.body.vorname;
-    rentalsFields.tumid = req.body.tumid;
-    rentalsFields.email = req.body.email;
-    rentalsFields.adresse = req.body.adresse;
-    rentalsFields.telefonnummer = req.body.telefonnummer;
+    if (req.body.tumid) rentalsFields.tumid = req.body.tumid;
+    if (req.body.email) rentalsFields.email = req.body.email;
+    //Anschrift
+    rentalsFields.adresse = {};
+    if (req.body.strasse) rentalsFields.adresse.strasse = req.body.strasse;
+    if (req.body.ort) rentalsFields.adresse.ort = req.body.ort;
+    if (req.body.plz) rentalsFields.adresse.plz = req.body.plz;
 
     if (req.body.telefonnummer)
       rentalsFields.telefonnummer = req.body.telefonnummer;
@@ -105,18 +108,12 @@ router.post(
     if (req.body.rückmeldung) rentalsFields.rückmeldung = req.body.rückmeldung;
     if (req.body.leihscheinverschickt)
       rentalsFields.leihscheinverschickt = req.body.leihscheinverschickt;
+    if (req.body.rückgabe) rentalsFields.rückgabe = req.body.rückgabe;
+    if (req.body.details) rentalsFields.details = req.body.details;
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
     if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
-    if (req.body.inventorynumber)
-      rentalsFields.leihobjekt.inventorynumber = req.body.inventorynumber;
-    if (req.body.rbgnumber)
-      rentalsFields.leihobjekt.rbgnumber = req.body.rbgnumber;
-    if (req.body.serialnumber)
-      rentalsFields.leihobjekt.serialnumber = req.body.serialnumber;
-    if (req.body.details) rentalsFields.leihobjekt.details = req.body.details;
-
     new Rentals(rentalsFields).save().then((rentals) => res.json(rentals));
   }
 );
@@ -138,10 +135,13 @@ router.post(
     const rentalsFields = {};
     rentalsFields.name = req.body.name;
     rentalsFields.vorname = req.body.vorname;
-    rentalsFields.tumid = req.body.tumid;
-    rentalsFields.email = req.body.email;
-    rentalsFields.adresse = req.body.adresse;
-    rentalsFields.telefonnummer = req.body.telefonnummer;
+    if (req.body.tumid) rentalsFields.tumid = req.body.tumid;
+    if (req.body.email) rentalsFields.email = req.body.email;
+    //Anschrift
+    rentalsFields.adresse = {};
+    if (req.body.strasse) rentalsFields.adresse.strasse = req.body.strasse;
+    if (req.body.ort) rentalsFields.adresse.ort = req.body.ort;
+    if (req.body.plz) rentalsFields.adresse.plz = req.body.plz;
 
     if (req.body.telefonnummer)
       rentalsFields.telefonnummer = req.body.telefonnummer;
@@ -159,18 +159,12 @@ router.post(
     if (req.body.rückmeldung) rentalsFields.rückmeldung = req.body.rückmeldung;
     if (req.body.leihscheinverschickt)
       rentalsFields.leihscheinverschickt = req.body.leihscheinverschickt;
+    if (req.body.rückgabe) rentalsFields.rückgabe = req.body.rückgabe;
+    if (req.body.details) rentalsFields.details = req.body.details;
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
     if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
-    if (req.body.inventorynumber)
-      rentalsFields.leihobjekt.inventorynumber = req.body.inventorynumber;
-    if (req.body.rbgnumber)
-      rentalsFields.leihobjekt.rbgnumber = req.body.rbgnumber;
-    if (req.body.serialnumber)
-      rentalsFields.leihobjekt.serialnumber = req.body.serialnumber;
-    if (req.body.details) rentalsFields.leihobjekt.details = req.body.details;
-
     //Update
 
     Rentals.findOneAndUpdate(
