@@ -198,7 +198,6 @@ class ViewRental extends Component {
     const { errors } = this.state;
 
     const statusOptions = [
-      { label: "* Status auswählen", value: 0 },
       { label: "Unvollständig", value: "Unvollständig" },
       { label: "Vollständig", value: "Vollständig" },
       { label: "Aktiv", value: "Aktiv" },

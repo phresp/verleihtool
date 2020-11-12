@@ -17,7 +17,7 @@ module.exports = function validateRentalsInput(data) {
   }
 
   if (Validator.isEmpty(data.status)) {
-    errors.status = "Status field is required";
+    errors.status = "Status Feld wird benötigt";
   }
 
   return {
