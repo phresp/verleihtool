@@ -207,10 +207,10 @@ router.post(
     const formdata = {
       name: req.body.name + ", " + req.body.vorname,
       tumid: req.body.tumid,
-      adresse1: req.body.adresse,
-      adresse2: "adresse 2",
+      adresse1: req.body.strasse,
+      adresse2: req.body.plz + ", " + req.body.ort,
       telefonnummer: req.body.telefonnummer,
-      rückgabe: "todo",
+      rückgabe: moment.utc(req.body.rückgabe).format("DD-MM-YYYY"),
       devicerow1: req.body.device,
       devicerow2: "reihe2",
       devicerow3: "reihe3",
