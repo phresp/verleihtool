@@ -68,15 +68,6 @@ const RentalsSchema = new Schema({
     device: {
       type: String,
     },
-    inventorynumber: {
-      type: String,
-    },
-    rbgnumber: {
-      type: String,
-    },
-    serialnumber: {
-      type: String,
-    },
   },
   details: {
     type: String,
