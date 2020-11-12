@@ -16,7 +16,7 @@ const moment = require("moment");
 
 //Leihschein-Template-Path
 const pdfTemplatePath = path.resolve(
-  __dirname + "../../../templates/Leihschein-Template.pdf"
+  __dirname + "../../../templates/Leihschein-Template-neu.pdf"
 );
 
 //PDF Outout Path Keep for debugging purposes
@@ -210,17 +210,18 @@ router.post(
   "/download/rentalform",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    var issuer = req.body.user.user.name;
     const formdata = {
       name: req.body.name + ", " + req.body.vorname,
       tumid: req.body.tumid,
-      adresse: req.body.adresse,
+      adresse1: req.body.adresse,
+      adresse2: "adresse 2",
       telefonnummer: req.body.telefonnummer,
-      aussteller: issuer,
-      nutzung: req.body.veranstaltung,
       rückgabe: "todo",
-      device: req.body.device,
-      details: req.body.details,
+      devicerow1: req.body.device,
+      devicerow2: "reihe2",
+      devicerow3: "reihe3",
+      devicerow4: "reihe4",
+      devicerow5: "reihe5",
     };
     pdftk
       .input(pdfTemplatePath)
