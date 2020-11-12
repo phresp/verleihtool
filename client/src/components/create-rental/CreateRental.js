@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 import { createRental } from "../../actions/rentalActions";
 
 class CreateRental extends Component {
@@ -28,6 +29,7 @@ class CreateRental extends Component {
       rückgabe: "",
       device: "",
       details: "",
+      status: "",
       errors: {},
     };
 
@@ -63,6 +65,7 @@ class CreateRental extends Component {
       rückgabe: this.state.rückgabe,
       device: this.state.device,
       details: this.state.details,
+      status: this.state.status,
     };
 
     this.props.createRental(rentalData, this.props.history);
@@ -74,6 +77,15 @@ class CreateRental extends Component {
 
   render() {
     const errors = this.state.errors;
+
+    const statusOptions = [
+      { label: "* Status auswählen", value: 0 },
+      { label: "Unvollständig", value: "Unvollständig" },
+      { label: "Vollständig", value: "Vollständig" },
+      { label: "Aktiv", value: "Aktiv" },
+      { label: "Abgeschlossen", value: "Abgeschlossen" },
+    ];
+
     return (
       <div className={"create-rental"}>
         <div className="container">
@@ -92,7 +104,6 @@ class CreateRental extends Component {
                   name="name"
                   error={errors.name}
                 />
-
                 <TextFieldGroup
                   placeholder="* Vorname"
                   onChange={this.onChange}
@@ -220,6 +231,16 @@ class CreateRental extends Component {
                   value={this.state.details}
                   name="details"
                   error={errors.details}
+                />
+
+                <SelectListGroup
+                  placeholder="* Status"
+                  onChange={this.onChange}
+                  value={this.state.status}
+                  name="status"
+                  error={errors.status}
+                  options={statusOptions}
+                  info={"Status der Leihe"}
                 />
 
                 <input

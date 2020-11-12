@@ -110,6 +110,7 @@ router.post(
       rentalsFields.leihscheinverschickt = req.body.leihscheinverschickt;
     if (req.body.rückgabe) rentalsFields.rückgabe = req.body.rückgabe;
     if (req.body.details) rentalsFields.details = req.body.details;
+    if (req.body.status) rentalsFields.status = req.body.status;
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
@@ -161,6 +162,7 @@ router.post(
       rentalsFields.leihscheinverschickt = req.body.leihscheinverschickt;
     if (req.body.rückgabe) rentalsFields.rückgabe = req.body.rückgabe;
     if (req.body.details) rentalsFields.details = req.body.details;
+    if (req.body.status) rentalsFields.status = req.body.status;
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};

@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import isEmpty from "../../validation/is-empty";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 import moment from "moment";
 
 import { updateRental } from "../../actions/rentalActions";
@@ -38,6 +39,7 @@ class ViewRental extends Component {
       rückgabe: "",
       device: "",
       details: "",
+      status: "",
       errors: {},
     };
 
@@ -107,6 +109,7 @@ class ViewRental extends Component {
         ? rental.leihobjekt.device
         : "";
       rental.details = !isEmpty(rental.details) ? rental.details : "";
+      rental.status = !isEmpty(rental.status) ? rental.status : "";
 
       //Set component fields state
       this.setState({
@@ -129,6 +132,7 @@ class ViewRental extends Component {
         rückgabe: rental.rückgabe,
         device: rental.device,
         details: rental.details,
+        status: rental.status,
       });
     }
   }
@@ -154,6 +158,7 @@ class ViewRental extends Component {
       rückgabe: this.state.rückgabe,
       device: this.state.device,
       details: this.state.details,
+      status: this.state.status,
       user: this.props.auth,
     };
     this.props.downloadRentalform(rentalData);
@@ -180,6 +185,7 @@ class ViewRental extends Component {
       rückgabe: this.state.rückgabe,
       device: this.state.device,
       details: this.state.details,
+      status: this.state.status,
     };
     this.props.updateRental(this.state.id, rentalData, this.props.history);
   }
@@ -190,6 +196,14 @@ class ViewRental extends Component {
 
   render() {
     const { errors } = this.state;
+
+    const statusOptions = [
+      { label: "* Status auswählen", value: 0 },
+      { label: "Unvollständig", value: "Unvollständig" },
+      { label: "Vollständig", value: "Vollständig" },
+      { label: "Aktiv", value: "Aktiv" },
+      { label: "Abgeschlossen", value: "Abgeschlossen" },
+    ];
 
     return (
       <div className="edit-rental">
@@ -221,6 +235,16 @@ class ViewRental extends Component {
                       </button>
                     </div>
                   </div>
+                  <h6>Status der Leihe</h6>
+                  <SelectListGroup
+                    placeholder="* Status"
+                    onChange={this.onChange}
+                    value={this.state.status}
+                    name="status"
+                    error={errors.status}
+                    options={statusOptions}
+                    disabled={this.state.processable ? "disabled" : ""}
+                  />
                 </div>
                 <h6>Name:</h6>
                 <TextFieldGroup
