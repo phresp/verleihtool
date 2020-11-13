@@ -224,12 +224,37 @@ router.post(
       adresse2: req.body.plz + ", " + req.body.ort,
       telefonnummer: req.body.telefonnummer,
       rückgabe: moment.utc(req.body.rückgabe).format("DD-MM-YYYY"),
-      devicerow1: req.body.device,
-      devicerow2: "reihe2",
-      devicerow3: "reihe3",
-      devicerow4: "reihe4",
-      devicerow5: "reihe5",
+
+      devicerow1: "",
+      devicerow2: "",
+      devicerow3: "",
+      devicerow4: "",
+      devicerow5: "",
     };
+    var counter = 1;
+    //formdata["devicerow" + counter] = "test";
+
+    if (req.body.ipad) {
+      formdata["devicerow" + counter] =
+        "Apple iPad Pro 12,9“ (4th gen) + Smart Folio + Apple Pencil (2nd Gen)  ";
+      counter++;
+    }
+    if (req.body.mikrofon) {
+      formdata["devicerow" + counter] = "Mikrofon Rhode NT-USB";
+      counter++;
+    }
+    if (req.body.wacom) {
+      formdata["devicerow" + counter] = "Wacom one Medium 2017";
+      counter++;
+    }
+    if (req.body.webcam) {
+      formdata["devicerow" + counter] = "Webcam Logitech C925e";
+      counter++;
+    }
+    if (req.body.stativ) {
+      formdata["devicerow" + counter] = "Mikrofonstativ K&M 25400";
+      counter++;
+    }
     pdftk
       .input(pdfTemplatePath)
       .fillForm(formdata)
