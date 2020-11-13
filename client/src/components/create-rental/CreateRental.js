@@ -79,7 +79,6 @@ class CreateRental extends Component {
     const errors = this.state.errors;
 
     const statusOptions = [
-      { label: "* Status auswählen", value: 0 },
       { label: "Unvollständig", value: "Unvollständig" },
       { label: "Vollständig", value: "Vollständig" },
       { label: "Aktiv", value: "Aktiv" },

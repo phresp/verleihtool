@@ -115,6 +115,7 @@ router.post(
     //Leihobjekt
     rentalsFields.leihobjekt = {};
     if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
+
     new Rentals(rentalsFields).save().then((rentals) => res.json(rentals));
   }
 );

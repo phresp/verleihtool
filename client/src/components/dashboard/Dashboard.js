@@ -4,13 +4,9 @@ import PropTypes from "prop-types";
 import { withRouter, Link } from "react-router-dom";
 import { getRentals } from "../../actions/rentalActions";
 import DashboardActions from "./DashboardActions";
-import { deleteRental } from "../../actions/rentalActions";
+import BootstrapTable from "react-bootstrap-table-next";
 
 class Dashboard extends Component {
-  onDeleteClick(id) {
-    this.props.deleteRental(id);
-  }
-
   componentDidMount() {
     this.props.getRentals();
   }
@@ -22,52 +18,46 @@ class Dashboard extends Component {
   }
 
   render() {
+    //Data for Table
     const rentals = this.props.rentals.rentals;
-    let leihen = [];
-    if (rentals) {
-      leihen = rentals.map((rents) => (
-        <tr key={rents._id}>
-          <td>{rents.name}</td>
-          <td>{rents.vorname}</td>
-          <td>{rents.tumid}</td>
-          <td>{rents.email}</td>
-          <td>
-            <Link to={`/rental/${rents._id}`} className="btn btn-info">
-              Betrachten
-            </Link>
-          </td>
-          <td>
-            <button
-              onClick={this.onDeleteClick.bind(this, rents._id)}
-              className="btn btn-danger"
-            >
-              Löschen
-            </button>
-          </td>
-        </tr>
-      ));
+    const entries = rentals ? rentals : [];
+
+    function betrachtenButton(cell, row, rowIndex, formatExtraData) {
+      return (
+        <Link to={`/rental/${row._id}`} className="btn btn-info">
+          Bearbeiten
+        </Link>
+      );
     }
 
-    let dashboardContent = (
-      <div>
-        <DashboardActions />
-        <div>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Vorname</th>
-                <th>TUM-ID</th>
-                <th>Email</th>
-                <th></th>
-                <th></th>
-              </tr>
-              {leihen}
-            </thead>
-          </table>
-        </div>
-      </div>
-    );
+    const columns = [
+      {
+        dataField: "name",
+        text: "Nachname",
+        sort: true,
+      },
+      {
+        dataField: "vorname",
+        text: "Vorname",
+        sort: true,
+      },
+      {
+        dataField: "tumid",
+        text: "TUM-ID",
+        sort: true,
+      },
+      {
+        dataField: "email",
+        text: "Email",
+        sort: true,
+      },
+      {
+        text: "Edit",
+        header: "Edit",
+        id: "links",
+        formatter: betrachtenButton,
+      },
+    ];
 
     return (
       <div className="dashboard">
@@ -75,7 +65,8 @@ class Dashboard extends Component {
           <div className="row">
             <div className="col-md-12">
               <h1 className="display-4">Verleihübersicht</h1>
-              {dashboardContent}
+              <DashboardActions />
+              <BootstrapTable keyField="_id" data={entries} columns={columns} />
             </div>
           </div>
         </div>
@@ -86,7 +77,6 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   getRentals: PropTypes.func.isRequired,
-  deleteRental: PropTypes.func.isRequired,
   rentals: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
 };
@@ -96,6 +86,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getRentals, deleteRental })(
-  withRouter(Dashboard)
-);
+export default connect(mapStateToProps, { getRentals })(withRouter(Dashboard));

@@ -11,10 +11,15 @@ import moment from "moment";
 
 import { updateRental } from "../../actions/rentalActions";
 import { downloadRentalform } from "../../actions/rentalActions";
+import { deleteRental } from "../../actions/rentalActions";
 
 class ViewRental extends Component {
   componentDidMount() {
     this.props.getRentalOfId(this.props.match.params.id);
+  }
+
+  onDeleteClick(id) {
+    this.props.deleteRental(id);
   }
 
   constructor(props) {
@@ -51,8 +56,6 @@ class ViewRental extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
-
-    const { user } = this.props.auth;
 
     if (nextProps.rentals.rental) {
       const rental = nextProps.rentals.rental;
@@ -231,6 +234,12 @@ class ViewRental extends Component {
                         className="btn btn-info"
                       >
                         PDF exportieren
+                      </button>
+                      <button
+                        onClick={this.onDeleteClick.bind(this, this.state.id)}
+                        className="btn btn-danger"
+                      >
+                        Löschen
                       </button>
                     </div>
                   </div>
@@ -440,10 +449,12 @@ const mapStateToProps = (state) => ({
   rentals: state.rentals,
   auth: state.auth,
   errors: state.errors,
+  deleteRental: PropTypes.func.isRequired,
 });
 
 export default connect(mapStateToProps, {
   getRentalOfId,
   updateRental,
   downloadRentalform,
+  deleteRental,
 })(withRouter(ViewRental));

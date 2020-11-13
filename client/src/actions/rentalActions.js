@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_RENTALS, GET_RENTAL, GET_ERRORS, DELETE_RENTAL } from "./types";
+import { GET_RENTALS, GET_RENTAL, GET_ERRORS } from "./types";
 
 //Get Rentals
 export const getRentals = () => (dispatch) => {
@@ -43,7 +43,6 @@ export const createRental = (rentalData, history) => (dispatch) => {
 
 //UpdateRental
 export const updateRental = (id, rentalData, history) => (dispatch) => {
-  console.log(id);
   axios
     .post(`/api/rentals/${id}`, rentalData)
     .then((res) => history.push("/dashboard"))
@@ -56,21 +55,13 @@ export const updateRental = (id, rentalData, history) => (dispatch) => {
 };
 
 //Delete Rental
-export const deleteRental = (id) => (dispatch) => {
-  axios
-    .delete(`/api/rentals/${id}`)
-    .then((res) => {
-      dispatch({
-        type: DELETE_RENTAL,
-        payload: id,
-      });
+export const deleteRental = (id) => (dispatch, history) => {
+  axios.delete(`/api/rentals/${id}`).catch((err) =>
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data,
     })
-    .catch((err) =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data,
-      })
-    );
+  );
 };
 
 //downloadRentalform

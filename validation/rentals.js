@@ -6,7 +6,7 @@ module.exports = function validateRentalsInput(data) {
 
   data.name = !isEmpty(data.name) ? data.name : "";
   data.vorname = !isEmpty(data.vorname) ? data.vorname : "";
-  data.status = !isEmpty(data.status) ? data.status : "";
+  data.status = !isEmpty(data.status) ? data.status : "Unvollständig";
 
   if (Validator.isEmpty(data.name)) {
     errors.name = "Das Name Feld darf nicht leer sein";
