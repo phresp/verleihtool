@@ -52,6 +52,11 @@ class Dashboard extends Component {
         sort: true,
       },
       {
+        dataField: "status",
+        text: "Status",
+        sort: true,
+      },
+      {
         text: "Edit",
         header: "Edit",
         id: "links",

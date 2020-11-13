@@ -114,7 +114,12 @@ router.post(
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
-    if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
+    if (req.body.ipad) rentalsFields.leihobjekt.ipad = req.body.ipad;
+    if (req.body.mikrofon)
+      rentalsFields.leihobjekt.mikrofon = req.body.mikrofon;
+    if (req.body.wacom) rentalsFields.leihobjekt.wacom = req.body.wacom;
+    if (req.body.webcam) rentalsFields.leihobjekt.webcam = req.body.webcam;
+    if (req.body.stativ) rentalsFields.leihobjekt.stativ = req.body.stativ;
 
     new Rentals(rentalsFields).save().then((rentals) => res.json(rentals));
   }
@@ -167,9 +172,14 @@ router.post(
 
     //Leihobjekt
     rentalsFields.leihobjekt = {};
-    if (req.body.device) rentalsFields.leihobjekt.device = req.body.device;
-    //Update
+    if (req.body.ipad) rentalsFields.leihobjekt.ipad = req.body.ipad;
+    if (req.body.mikrofon)
+      rentalsFields.leihobjekt.mikrofon = req.body.mikrofon;
+    if (req.body.wacom) rentalsFields.leihobjekt.wacom = req.body.wacom;
+    if (req.body.webcam) rentalsFields.leihobjekt.webcam = req.body.webcam;
+    if (req.body.stativ) rentalsFields.leihobjekt.stativ = req.body.stativ;
 
+    //Update
     Rentals.findOneAndUpdate(
       { _id: req.params.id },
       { $set: rentalsFields },

@@ -65,8 +65,20 @@ const RentalsSchema = new Schema({
     type: Date,
   },
   leihobjekt: {
-    device: {
-      type: String,
+    ipad: {
+      type: Boolean,
+    },
+    mikrofon: {
+      type: Boolean,
+    },
+    wacom: {
+      type: Boolean,
+    },
+    webcam: {
+      type: Boolean,
+    },
+    stativ: {
+      type: Boolean,
     },
   },
   details: {

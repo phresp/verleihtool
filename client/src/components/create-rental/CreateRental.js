@@ -27,7 +27,11 @@ class CreateRental extends Component {
       rückmeldung: "",
       leihscheinverschickt: "",
       rückgabe: "",
-      device: "",
+      ipad: false,
+      mikrofon: false,
+      wacom: false,
+      webcam: false,
+      stativ: false,
       details: "",
       status: "",
       errors: {},
@@ -63,7 +67,11 @@ class CreateRental extends Component {
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
       rückgabe: this.state.rückgabe,
-      device: this.state.device,
+      ipad: this.state.ipad,
+      mikrofon: this.state.mikrofon,
+      wacom: this.state.wacom,
+      webcam: this.state.webcam,
+      stativ: this.state.stativ,
       details: this.state.details,
       status: this.state.status,
     };
@@ -216,13 +224,89 @@ class CreateRental extends Component {
                   name={"rückgabe"}
                   error={errors.rückgabe}
                 />
-                <TextFieldGroup
-                  placeholder="Leihgerät"
-                  onChange={this.onChange}
-                  value={this.state.device}
-                  name="device"
-                  error={errors.device}
-                />
+                <h6>Leihgeräte</h6>
+                <div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="ipad"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          ipad: !prevState.ipad,
+                        }));
+                      }}
+                      value={this.state.ipad}
+                    />
+                    <label className="form-check-label" htmlFor="ipad">
+                      Ipad Pro
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="mikrofon"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          mikrofon: !prevState.mikrofon,
+                        }));
+                      }}
+                      value={this.state.mikrofon}
+                    />
+                    <label className="form-check-label" htmlFor="mikrofon">
+                      Mikrofon
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="wacom"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          wacom: !prevState.wacom,
+                        }));
+                      }}
+                      value={this.state.wacom}
+                    />
+                    <label className="form-check-label" htmlFor="wacom">
+                      Wacom Tablet
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="webcam"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          webcam: !prevState.webcam,
+                        }));
+                      }}
+                      value={this.state.webcam}
+                    />
+                    <label className="form-check-label" htmlFor="webcam">
+                      Webcam
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="stativ"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          stativ: !prevState.stativ,
+                        }));
+                      }}
+                      value={this.state.stativ}
+                    />
+                    <label className="form-check-label" htmlFor="stativ">
+                      Mikrofonstativ
+                    </label>
+                  </div>
+                </div>
 
                 <TextAreaFieldGroup
                   placeholder="Bemerkungen"

@@ -42,7 +42,11 @@ class ViewRental extends Component {
       rückmeldung: "",
       leihscheinverschickt: "",
       rückgabe: "",
-      device: "",
+      ipad: true,
+      mikrofon: true,
+      wacom: true,
+      webcam: true,
+      stativ: true,
       details: "",
       status: "",
       errors: {},
@@ -108,9 +112,26 @@ class ViewRental extends Component {
       rental.rückgabe = !isEmpty(rental.rückgabe) ? rental.rückgabe : "";
 
       //Leihgerätefelder
-      rental.device = !isEmpty(rental.leihobjekt.device)
-        ? rental.leihobjekt.device
-        : "";
+      rental.leihobjekt.ipad = !isEmpty(rental.leihobjekt.ipad)
+        ? rental.leihobjekt.ipad
+        : false;
+
+      rental.leihobjekt.mikrofon = !isEmpty(rental.leihobjekt.mikrofon)
+        ? rental.leihobjekt.mikrofon
+        : false;
+
+      rental.leihobjekt.wacom = !isEmpty(rental.leihobjekt.wacom)
+        ? rental.leihobjekt.wacom
+        : false;
+
+      rental.leihobjekt.webcam = !isEmpty(rental.leihobjekt.webcam)
+        ? rental.leihobjekt.webcam
+        : false;
+
+      rental.leihobjekt.stativ = !isEmpty(rental.leihobjekt.stativ)
+        ? rental.leihobjekt.stativ
+        : false;
+
       rental.details = !isEmpty(rental.details) ? rental.details : "";
       rental.status = !isEmpty(rental.status) ? rental.status : "";
 
@@ -133,7 +154,11 @@ class ViewRental extends Component {
         rückmeldung: rental.rückmeldung,
         leihscheinverschickt: rental.leihscheinverschickt,
         rückgabe: rental.rückgabe,
-        device: rental.device,
+        ipad: rental.leihobjekt.ipad,
+        mikrofon: rental.leihobjekt.mikrofon,
+        wacom: rental.leihobjekt.wacom,
+        webcam: rental.leihobjekt.webcam,
+        stativ: rental.leihobjekt.stativ,
         details: rental.details,
         status: rental.status,
       });
@@ -159,7 +184,11 @@ class ViewRental extends Component {
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
       rückgabe: this.state.rückgabe,
-      device: this.state.device,
+      ipad: this.state.ipad,
+      mikrofon: this.state.mikrofon,
+      wacom: this.state.wacom,
+      webcam: this.state.webcam,
+      stativ: this.state.stativ,
       details: this.state.details,
       status: this.state.status,
       user: this.props.auth,
@@ -186,7 +215,11 @@ class ViewRental extends Component {
       rückmeldung: this.state.rückmeldung,
       leihscheinverschickt: this.state.leihscheinverschickt,
       rückgabe: this.state.rückgabe,
-      device: this.state.device,
+      ipad: this.state.ipad,
+      mikrofon: this.state.mikrofon,
+      wacom: this.state.wacom,
+      webcam: this.state.webcam,
+      stativ: this.state.stativ,
       details: this.state.details,
       status: this.state.status,
     };
@@ -405,15 +438,102 @@ class ViewRental extends Component {
                   error={errors.rückgabe}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-                <h6>Leihgerät:</h6>
-                <TextFieldGroup
-                  placeholder="Leihgeräte"
-                  onChange={this.onChange}
-                  value={this.state.device}
-                  name="device"
-                  error={errors.device}
-                  disabled={this.state.processable ? "disabled" : ""}
-                />
+
+                <h6>Leihgeräte</h6>
+                <div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="ipad"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          ipad: !prevState.ipad,
+                        }));
+                      }}
+                      checked={this.state.ipad}
+                      value={this.state.ipad}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="ipad">
+                      Ipad Pro
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="mikrofon"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          mikrofon: !prevState.mikrofon,
+                        }));
+                      }}
+                      checked={this.state.mikrofon}
+                      value={this.state.mikrofon}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="mikrofon">
+                      Mikrofon
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="wacom"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          wacom: !prevState.wacom,
+                        }));
+                      }}
+                      value={this.state.wacom}
+                      checked={this.state.wacom}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="wacom">
+                      Wacom Tablet
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="webcam"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          webcam: !prevState.webcam,
+                        }));
+                      }}
+                      value={this.state.webcam}
+                      checked={this.state.webcam}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="webcam">
+                      Webcam
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="stativ"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          stativ: !prevState.stativ,
+                        }));
+                      }}
+                      value={this.state.stativ}
+                      checked={this.state.stativ}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="stativ">
+                      Mikrofonstativ
+                    </label>
+                    <div></div>
+                  </div>
+                </div>
+
                 <h6>Details:</h6>
                 <TextAreaFieldGroup
                   placeholder="Bemerkungen"
