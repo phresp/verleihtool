@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/rentals.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +30,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Masterarbeit/tutor-tool" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="F:\Github-Projects\verleihtool\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -77,7 +76,9 @@
       <workItem from="1605108231469" duration="3750000" />
       <workItem from="1605167970614" duration="13976000" />
       <workItem from="1605219432106" duration="1550000" />
-      <workItem from="1605247087783" duration="16159000" />
+      <workItem from="1605247087783" duration="17487000" />
+      <workItem from="1605383024875" duration="589000" />
+      <workItem from="1605519279443" duration="2321000" />
     </task>
     <servers />
   </component>
@@ -94,10 +95,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605248770212" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1605198606308">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1605519403784">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605198606308" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605519403784" />
     <state width="1276" height="166" key="GridCell.Tab.0.bottom" timestamp="1605081621716">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -126,10 +127,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605219869470" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1604472434538">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2002" y="-540" key="SettingsEditor" timestamp="1605521330263">
+      <screen x="1920" y="-836" width="1080" height="1880" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472434538" />
+    <state x="2002" y="-540" key="SettingsEditor/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@1920.-836.1080.1880" timestamp="1605521330263" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605190018822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
