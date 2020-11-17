@@ -88,8 +88,8 @@ class CreateRental extends Component {
 
     const statusOptions = [
       { label: "Unvollständig", value: "Unvollständig" },
-      { label: "Vollständig", value: "Vollständig" },
-      { label: "Aktiv", value: "Aktiv" },
+      { label: "LS verschickt", value: "Vollständig" },
+      { label: "HW ausgegeben", value: "Aktiv" },
       { label: "Abgeschlossen", value: "Abgeschlossen" },
     ];
 
@@ -200,14 +200,6 @@ class CreateRental extends Component {
                   name={"angeschrieben"}
                   error={errors.angeschrieben}
                 />
-                <h6>Leihschein verschickt am:</h6>
-                <TextFieldGroup
-                  type={"date"}
-                  onChange={this.onChange}
-                  value={this.state.leihscheinverschickt}
-                  name={"leihscheinverschickt"}
-                  error={errors.leihscheinverschickt}
-                />
                 <h6>Rückmeldung erhalten am:</h6>
                 <TextFieldGroup
                   type={"date"}
@@ -216,6 +208,16 @@ class CreateRental extends Component {
                   name={"rückmeldung"}
                   error={errors.rückmeldung}
                 />
+
+                <h6>Leihschein verschickt am:</h6>
+                <TextFieldGroup
+                  type={"date"}
+                  onChange={this.onChange}
+                  value={this.state.leihscheinverschickt}
+                  name={"leihscheinverschickt"}
+                  error={errors.leihscheinverschickt}
+                />
+
                 <h6>Vorraussichtliche Rückgabe:</h6>
                 <TextFieldGroup
                   type={"date"}

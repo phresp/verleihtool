@@ -178,6 +178,7 @@ router.post(
     if (req.body.wacom) rentalsFields.leihobjekt.wacom = req.body.wacom;
     if (req.body.webcam) rentalsFields.leihobjekt.webcam = req.body.webcam;
     if (req.body.stativ) rentalsFields.leihobjekt.stativ = req.body.stativ;
+    rentalsFields.date = Date.now();
 
     //Update
     Rentals.findOneAndUpdate(

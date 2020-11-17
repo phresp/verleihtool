@@ -235,8 +235,8 @@ class ViewRental extends Component {
 
     const statusOptions = [
       { label: "Unvollständig", value: "Unvollständig" },
-      { label: "Vollständig", value: "Vollständig" },
-      { label: "Aktiv", value: "Aktiv" },
+      { label: "LS verschickt", value: "LS verschicktw" },
+      { label: "HW ausgegeben", value: "HW ausgegeben" },
       { label: "Abgeschlossen", value: "Abgeschlossen" },
     ];
 
@@ -407,17 +407,6 @@ class ViewRental extends Component {
                   error={errors.angeschrieben}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
-                <h6>Leihschein verschickt am:</h6>
-                <TextFieldGroup
-                  type={"date"}
-                  onChange={this.onChange}
-                  value={moment
-                    .utc(this.state.leihscheinverschickt)
-                    .format("YYYY-MM-DD")}
-                  name={"leihscheinverschickt"}
-                  error={errors.leihscheinverschickt}
-                  disabled={this.state.processable ? "disabled" : ""}
-                />
                 <h6>Rückmeldung erhalten am:</h6>
                 <TextFieldGroup
                   type={"date"}
@@ -429,6 +418,19 @@ class ViewRental extends Component {
                   error={errors.rückmeldung}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
+
+                <h6>Leihschein verschickt am:</h6>
+                <TextFieldGroup
+                  type={"date"}
+                  onChange={this.onChange}
+                  value={moment
+                    .utc(this.state.leihscheinverschickt)
+                    .format("YYYY-MM-DD")}
+                  name={"leihscheinverschickt"}
+                  error={errors.leihscheinverschickt}
+                  disabled={this.state.processable ? "disabled" : ""}
+                />
+
                 <h6>Vorraussichtliche Rückgabe:</h6>
                 <TextFieldGroup
                   type={"date"}

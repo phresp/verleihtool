@@ -5,6 +5,7 @@ import { withRouter, Link } from "react-router-dom";
 import { getRentals } from "../../actions/rentalActions";
 import DashboardActions from "./DashboardActions";
 import BootstrapTable from "react-bootstrap-table-next";
+import moment from "moment";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -28,6 +29,10 @@ class Dashboard extends Component {
           Bearbeiten
         </Link>
       );
+    }
+
+    function dateFormat(value, row, index) {
+      return moment(value).format("DD/MM/YYYY");
     }
 
     const columns = [
@@ -57,6 +62,18 @@ class Dashboard extends Component {
         sort: true,
       },
       {
+        dataField: "rückgabe",
+        text: "Vorraussichliches Rückgabedatum",
+        formatter: dateFormat,
+        sort: true,
+      },
+      {
+        dataField: "date",
+        text: "Zuletzt bearbeitet",
+        formatter: dateFormat,
+        sort: true,
+      },
+      {
         text: "Edit",
         header: "Edit",
         id: "links",
@@ -66,8 +83,8 @@ class Dashboard extends Component {
 
     return (
       <div className="dashboard">
-        <div className="container">
-          <div className="row">
+        <div className="container-fluid">
+          <div className="row-fluid">
             <div className="col-md-12">
               <h1 className="display-4">Verleihübersicht</h1>
               <DashboardActions />
