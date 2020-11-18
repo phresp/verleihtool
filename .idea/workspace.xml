@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/rentals.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/rentals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
       <workItem from="1605611824047" duration="112000" />
       <workItem from="1605620327547" duration="4013000" />
       <workItem from="1605653678274" duration="904000" />
-      <workItem from="1605687439837" duration="6727000" />
+      <workItem from="1605687439837" duration="9139000" />
     </task>
     <servers />
   </component>

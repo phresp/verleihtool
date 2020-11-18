@@ -458,7 +458,7 @@ class ViewRental extends Component {
                       disabled={this.state.processable ? "disabled" : ""}
                     />
                     <label className="form-check-label" htmlFor="ipad">
-                      Ipad Pro
+                      iPad Pro
                     </label>
                   </div>
                   <div className="form-check form-check-inline">

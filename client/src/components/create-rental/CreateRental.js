@@ -241,7 +241,7 @@ class CreateRental extends Component {
                       value={this.state.ipad}
                     />
                     <label className="form-check-label" htmlFor="ipad">
-                      Ipad Pro
+                      iPad Pro
                     </label>
                   </div>
                   <div className="form-check form-check-inline">

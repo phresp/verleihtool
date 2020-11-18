@@ -42,7 +42,9 @@ class Dashboard extends Component {
           <h6>Status Filter:</h6>
 
           <button
-            className="btn btn-light"
+            className={
+              this.state.fil === "0" ? "btn btn-primary" : "btn btn-light"
+            }
             onClick={() => {
               this.setState({
                 fil: "0",
@@ -54,7 +56,11 @@ class Dashboard extends Component {
           </button>
 
           <button
-            className="btn btn-light"
+            className={
+              this.state.fil === "Unvollständig"
+                ? "btn btn-primary"
+                : "btn btn-light"
+            }
             onClick={() => {
               this.setState({
                 fil: "Unvollständig",
@@ -66,7 +72,11 @@ class Dashboard extends Component {
           </button>
 
           <button
-            className="btn btn-light"
+            className={
+              this.state.fil === "LS verschickt"
+                ? "btn btn-primary"
+                : "btn btn-light"
+            }
             onClick={() => {
               this.setState({
                 fil: "LS verschickt",
@@ -78,7 +88,11 @@ class Dashboard extends Component {
           </button>
 
           <button
-            className="btn btn-light"
+            className={
+              this.state.fil === "HW ausgegeben"
+                ? "btn btn-primary"
+                : "btn btn-light"
+            }
             onClick={() => {
               this.setState({
                 fil: "HW ausgegeben",
@@ -90,7 +104,11 @@ class Dashboard extends Component {
           </button>
 
           <button
-            className="btn btn-light"
+            className={
+              this.state.fil === "Abgeschlossen"
+                ? "btn btn-primary"
+                : "btn btn-light"
+            }
             onClick={() => {
               this.setState({
                 fil: "Abgeschlossen",
@@ -176,32 +194,37 @@ class Dashboard extends Component {
       },
       {
         dataField: "leihobjekt.ipad",
-        text: "Ipad",
+        text: "iPad",
         formatter: trueFormat,
+        align: "center",
         sort: true,
       },
       {
         dataField: "leihobjekt.mikrofon",
         text: "Mikrofon",
         formatter: trueFormat,
+        align: "center",
         sort: true,
       },
       {
         dataField: "leihobjekt.wacom",
         text: "Wacom",
         formatter: trueFormat,
+        align: "center",
         sort: true,
       },
       {
         dataField: "leihobjekt.webcam",
         text: "Webcam",
         formatter: trueFormat,
+        align: "center",
         sort: true,
       },
       {
         dataField: "leihobjekt.stativ",
         text: "Stativ",
         formatter: trueFormat,
+        align: "center",
         sort: true,
       },
       {
