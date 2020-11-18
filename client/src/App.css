@@ -2,22 +2,6 @@ img {
   width: 100%;
 }
 
-.container-fluid {
-  margin: 0 auto;
-  height: 100%;
-  padding: 20px 0;
-
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.content-area, .article-tree{
-  background: #bada55;
-  overflow:auto;
-  height: 100%;
-}
-
 .landing {
   position: relative;
   background: url('./img/showcase.jpg') no-repeat;

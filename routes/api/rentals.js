@@ -222,7 +222,7 @@ router.post(
       name: req.body.name + ", " + req.body.vorname,
       tumid: req.body.tumid,
       adresse1: req.body.strasse,
-      adresse2: req.body.plz + ", " + req.body.ort,
+      adresse2: req.body.plz + req.body.ort,
       telefonnummer: req.body.telefonnummer,
       rückgabe: moment.utc(req.body.rückgabe).format("DD-MM-YYYY"),
 

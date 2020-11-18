@@ -3,11 +3,20 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter, Link } from "react-router-dom";
 import { getRentals } from "../../actions/rentalActions";
-import DashboardActions from "./DashboardActions";
+//import DashboardActions from "./DashboardActions";
 import BootstrapTable from "react-bootstrap-table-next";
 import moment from "moment";
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fil: "0",
+    };
+
+    this.onChange = this.onChange.bind(this);
+  }
+
   componentDidMount() {
     this.props.getRentals();
   }
@@ -18,10 +27,98 @@ class Dashboard extends Component {
     }
   }
 
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
   render() {
+    const DashboardActions = () => {
+      return (
+        <div className="dash-buttons">
+          <Link to="/new-rental" className="btn btn-info">
+            <i className="fas fa-user-circle text-primary"></i> Neue Ausleihe
+          </Link>
+
+          <h6>Status Filter:</h6>
+
+          <button
+            className="btn btn-light"
+            onClick={() => {
+              this.setState({
+                fil: "0",
+              });
+            }}
+          >
+            {" "}
+            Alle
+          </button>
+
+          <button
+            className="btn btn-light"
+            onClick={() => {
+              this.setState({
+                fil: "Unvollständig",
+              });
+            }}
+          >
+            {" "}
+            Unvollständig
+          </button>
+
+          <button
+            className="btn btn-light"
+            onClick={() => {
+              this.setState({
+                fil: "LS verschickt",
+              });
+            }}
+          >
+            {" "}
+            LS verschickt
+          </button>
+
+          <button
+            className="btn btn-light"
+            onClick={() => {
+              this.setState({
+                fil: "HW ausgegeben",
+              });
+            }}
+          >
+            {" "}
+            HW ausgegeben
+          </button>
+
+          <button
+            className="btn btn-light"
+            onClick={() => {
+              this.setState({
+                fil: "Abgeschlossen",
+              });
+            }}
+          >
+            {" "}
+            Abgeschlossen
+          </button>
+        </div>
+      );
+    };
+
     //Data for Table
     const rentals = this.props.rentals.rentals;
     const entries = rentals ? rentals : [];
+
+    var newArray = entries.filter((el) => {
+      if (this.state.fil === "0") return el;
+      if (this.state.fil === "Abgeschlossen")
+        return el.status === "Abgeschlossen";
+      if (this.state.fil === "Unvollständig")
+        return el.status === "Unvollständig";
+      if (this.state.fil === "LS verschickt")
+        return el.status === "LS verschickt";
+      if (this.state.fil === "HW ausgegeben")
+        return el.status === "HW ausgegeben";
+    });
 
     function betrachtenButton(cell, row, rowIndex, formatExtraData) {
       return (
@@ -33,6 +130,10 @@ class Dashboard extends Component {
 
     function dateFormat(value, row, index) {
       return moment(value).format("DD/MM/YYYY");
+    }
+
+    function trueFormat(value, row, index) {
+      if (value) return "X";
     }
 
     const columns = [
@@ -63,7 +164,7 @@ class Dashboard extends Component {
       },
       {
         dataField: "rückgabe",
-        text: "Vorraussichliches Rückgabedatum",
+        text: "Rückgabedatum",
         formatter: dateFormat,
         sort: true,
       },
@@ -71,6 +172,36 @@ class Dashboard extends Component {
         dataField: "date",
         text: "Zuletzt bearbeitet",
         formatter: dateFormat,
+        sort: true,
+      },
+      {
+        dataField: "leihobjekt.ipad",
+        text: "Ipad",
+        formatter: trueFormat,
+        sort: true,
+      },
+      {
+        dataField: "leihobjekt.mikrofon",
+        text: "Mikrofon",
+        formatter: trueFormat,
+        sort: true,
+      },
+      {
+        dataField: "leihobjekt.wacom",
+        text: "Wacom",
+        formatter: trueFormat,
+        sort: true,
+      },
+      {
+        dataField: "leihobjekt.webcam",
+        text: "Webcam",
+        formatter: trueFormat,
+        sort: true,
+      },
+      {
+        dataField: "leihobjekt.stativ",
+        text: "Stativ",
+        formatter: trueFormat,
         sort: true,
       },
       {
@@ -82,15 +213,11 @@ class Dashboard extends Component {
     ];
 
     return (
-      <div className="dashboard">
+      <div className="container-fluid">
         <div className="container-fluid">
-          <div className="row-fluid">
-            <div className="col-md-12">
-              <h1 className="display-4">Verleihübersicht</h1>
-              <DashboardActions />
-              <BootstrapTable keyField="_id" data={entries} columns={columns} />
-            </div>
-          </div>
+          <h1 className="display-4">Verleihübersicht</h1>
+          <DashboardActions />
+          <BootstrapTable keyField="_id" data={newArray} columns={columns} />
         </div>
       </div>
     );
