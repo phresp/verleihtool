@@ -171,11 +171,6 @@ class Dashboard extends Component {
         sort: true,
       },
       {
-        dataField: "email",
-        text: "Email",
-        sort: true,
-      },
-      {
         dataField: "status",
         text: "Status",
         sort: true,
@@ -183,12 +178,6 @@ class Dashboard extends Component {
       {
         dataField: "rückgabe",
         text: "Rückgabedatum",
-        formatter: dateFormat,
-        sort: true,
-      },
-      {
-        dataField: "date",
-        text: "Zuletzt bearbeitet",
         formatter: dateFormat,
         sort: true,
       },
@@ -227,6 +216,18 @@ class Dashboard extends Component {
         align: "center",
         sort: true,
       },
+      {
+        dataField: "date",
+        text: "Zuletzt bearbeitet",
+        formatter: dateFormat,
+        sort: true,
+      },
+      {
+        dataField: "lasthandle",
+        text: "Kürzel",
+        sort: true,
+      },
+
       {
         text: "Edit",
         header: "Edit",

@@ -13,6 +13,7 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      handle: "",
       errors: {},
     };
 
@@ -43,6 +44,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2,
+      handle: this.state.handle,
     };
 
     this.props.registerUser(newUser, this.props.history);
@@ -78,10 +80,15 @@ class Register extends Component {
                   value={this.state.email}
                   name="email"
                   error={errors.email}
-                  info={
-                    "This site uses Gravatar so if you want a profile image, use\n" +
-                    "a Gravatar email"
-                  }
+                />
+
+                <TextFieldGroup
+                  placeholder="Kürzel"
+                  type="text"
+                  onChange={this.onChange}
+                  value={this.state.handle}
+                  name="handle"
+                  error={errors.handle}
                 />
 
                 <TextFieldGroup

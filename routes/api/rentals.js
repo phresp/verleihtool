@@ -121,6 +121,8 @@ router.post(
     if (req.body.webcam) rentalsFields.leihobjekt.webcam = req.body.webcam;
     if (req.body.stativ) rentalsFields.leihobjekt.stativ = req.body.stativ;
 
+    rentalsFields.lasthandle = req.user.handle;
+
     new Rentals(rentalsFields).save().then((rentals) => res.json(rentals));
   }
 );
@@ -144,6 +146,7 @@ router.post(
     rentalsFields.vorname = req.body.vorname;
     if (req.body.tumid) rentalsFields.tumid = req.body.tumid;
     if (req.body.email) rentalsFields.email = req.body.email;
+
     //Anschrift
     rentalsFields.adresse = {};
     if (req.body.strasse) rentalsFields.adresse.strasse = req.body.strasse;
@@ -179,6 +182,7 @@ router.post(
     if (req.body.webcam) rentalsFields.leihobjekt.webcam = req.body.webcam;
     if (req.body.stativ) rentalsFields.leihobjekt.stativ = req.body.stativ;
     rentalsFields.date = Date.now();
+    rentalsFields.lasthandle = req.user.handle;
 
     //Update
     Rentals.findOneAndUpdate(
@@ -225,7 +229,6 @@ router.post(
       adresse2: req.body.plz + " " + req.body.ort,
       telefonnummer: req.body.telefonnummer,
       rückgabe: moment.utc(req.body.rückgabe).format("DD-MM-YYYY"),
-
       devicerow1: "",
       devicerow2: "",
       devicerow3: "",

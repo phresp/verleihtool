@@ -37,6 +37,7 @@ router.post("/register", (req, res) => {
         name: req.body.name,
         password: req.body.password,
         email: req.body.email,
+        handle: req.body.handle.toUpperCase(),
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -74,6 +75,11 @@ router.post("/login", (req, res) => {
       return res.status(404).json(errors);
     }
 
+    if (!user.admin) {
+      errors.email = "User not found";
+      return res.status(401).json(errors);
+    }
+
     //Check Password
     bcrypt.compare(password, user.password).then((isMatch) => {
       if (isMatch) {
@@ -81,7 +87,7 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           name: user.name,
-          avatar: user.avatar,
+          handle: user.handle,
         };
         // Sign Token
         jwt.sign(

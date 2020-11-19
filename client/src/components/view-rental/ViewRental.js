@@ -191,7 +191,6 @@ class ViewRental extends Component {
       stativ: this.state.stativ,
       details: this.state.details,
       status: this.state.status,
-      user: this.props.auth,
     };
     this.props.downloadRentalform(rentalData);
   }

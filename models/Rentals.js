@@ -58,6 +58,9 @@ const RentalsSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  lasthandle: {
+    type: String,
+  },
   status: {
     type: String,
   },
