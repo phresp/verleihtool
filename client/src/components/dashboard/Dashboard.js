@@ -3,9 +3,12 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter, Link } from "react-router-dom";
 import { getRentals } from "../../actions/rentalActions";
-//import DashboardActions from "./DashboardActions";
 import BootstrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
+import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import moment from "moment";
+
+const { SearchBar } = Search;
 
 class Dashboard extends Component {
   constructor(props) {
@@ -147,7 +150,7 @@ class Dashboard extends Component {
     }
 
     function dateFormat(value, row, index) {
-      return moment(value).format("DD/MM/YYYY");
+      if (value) return moment(value).format("DD/MM/YYYY");
     }
 
     function trueFormat(value, row, index) {
@@ -240,8 +243,107 @@ class Dashboard extends Component {
       <div className="container-fluid">
         <div className="container-fluid">
           <h1 className="display-4">Verleihübersicht</h1>
-          <DashboardActions />
-          <BootstrapTable keyField="_id" data={newArray} columns={columns} />
+          <ToolkitProvider
+            keyField="id"
+            data={newArray}
+            columns={columns}
+            search
+          >
+            {(props) => (
+              <div>
+                <Link to="/new-rental" className="btn btn-info">
+                  <i className="fas fa-user-circle text-primary"></i> Neue
+                  Ausleihe
+                </Link>
+
+                <h6>Status Filter:</h6>
+
+                <button
+                  className={
+                    this.state.fil === "0" ? "btn btn-primary" : "btn btn-light"
+                  }
+                  onClick={() => {
+                    this.setState({
+                      fil: "0",
+                    });
+                  }}
+                >
+                  {" "}
+                  Alle
+                </button>
+
+                <button
+                  className={
+                    this.state.fil === "Unvollständig"
+                      ? "btn btn-primary"
+                      : "btn btn-light"
+                  }
+                  onClick={() => {
+                    this.setState({
+                      fil: "Unvollständig",
+                    });
+                  }}
+                >
+                  {" "}
+                  Unvollständig
+                </button>
+
+                <button
+                  className={
+                    this.state.fil === "LS verschickt"
+                      ? "btn btn-primary"
+                      : "btn btn-light"
+                  }
+                  onClick={() => {
+                    this.setState({
+                      fil: "LS verschickt",
+                    });
+                  }}
+                >
+                  {" "}
+                  LS verschickt
+                </button>
+
+                <button
+                  className={
+                    this.state.fil === "HW ausgegeben"
+                      ? "btn btn-primary"
+                      : "btn btn-light"
+                  }
+                  onClick={() => {
+                    this.setState({
+                      fil: "HW ausgegeben",
+                    });
+                  }}
+                >
+                  {" "}
+                  HW ausgegeben
+                </button>
+
+                <button
+                  className={
+                    this.state.fil === "Abgeschlossen"
+                      ? "btn btn-primary"
+                      : "btn btn-light"
+                  }
+                  onClick={() => {
+                    this.setState({
+                      fil: "Abgeschlossen",
+                    });
+                  }}
+                >
+                  {" "}
+                  Abgeschlossen
+                </button>
+                <SearchBar {...props.searchProps} />
+                <hr />
+                <BootstrapTable
+                  {...props.baseProps}
+                  pagination={paginationFactory()}
+                />
+              </div>
+            )}
+          </ToolkitProvider>
         </div>
       </div>
     );

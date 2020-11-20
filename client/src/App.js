@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
+import setAuthToken from "./components/common/setAuthToken";
 import { logoutUser, setCurrentUser } from "./actions/authActions";
 
 import { Provider } from "react-redux";
 import store from "./store";
 
 import PrivateRoute from "./components/common/PrivateRoute";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -59,9 +60,15 @@ class App extends Component {
                   component={CreateRental}
                 />
               </Switch>
-              <Switch>
-                <PrivateRoute exact path="/rental/:id" component={ViewRental} />
-              </Switch>
+              <ScrollToTop>
+                <Switch>
+                  <PrivateRoute
+                    exact
+                    path="/rental/:id"
+                    component={ViewRental}
+                  />
+                </Switch>
+              </ScrollToTop>
             </div>
             <Footer />
           </div>
