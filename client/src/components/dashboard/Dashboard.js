@@ -144,7 +144,7 @@ class Dashboard extends Component {
     function betrachtenButton(cell, row, rowIndex, formatExtraData) {
       return (
         <Link to={`/rental/${row._id}`} className="btn btn-info">
-          Bearbeiten
+          Edit
         </Link>
       );
     }
@@ -169,8 +169,8 @@ class Dashboard extends Component {
         sort: true,
       },
       {
-        dataField: "tumid",
-        text: "TUM-ID",
+        dataField: "email",
+        text: "Email",
         sort: true,
       },
       {
@@ -239,11 +239,33 @@ class Dashboard extends Component {
       },
     ];
 
+    const paginationOptions = {
+      sizePerPageList: [
+        {
+          text: "10",
+          value: 10,
+        },
+        {
+          text: "25",
+          value: 25,
+        },
+        {
+          text: "50",
+          value: 50,
+        },
+        {
+          text: "100",
+          value: 100,
+        },
+      ],
+    };
+
     return (
       <div className="container-fluid">
         <div className="container-fluid">
           <h1 className="display-4">Verleihübersicht</h1>
           <ToolkitProvider
+            bootstrap4
             keyField="id"
             data={newArray}
             columns={columns}
@@ -338,8 +360,9 @@ class Dashboard extends Component {
                 <SearchBar {...props.searchProps} />
                 <hr />
                 <BootstrapTable
+                  striped
                   {...props.baseProps}
-                  pagination={paginationFactory()}
+                  pagination={paginationFactory(paginationOptions)}
                 />
               </div>
             )}
