@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/rentalActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/rentalActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/view-rental/ViewRental.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,16 +40,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Github-Projects\verleihtool\client\src\components\common" />
+      <recent name="F:\Github-Projects\Verleihtool\routes\api" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Github-Projects\verleihtool\client\public" />
       <recent name="F:\Github-Projects\verleihtool\client\src\img" />
       <recent name="F:\Github-Projects\verleihtool\templates" />
       <recent name="F:\Github-Projects\verleihtool\client\src" />
       <recent name="F:\Github-Projects\verleihtool\client" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Github-Projects\verleihtool\client\src\components\common" />
-      <recent name="F:\Github-Projects\Verleihtool\routes\api" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -100,6 +99,11 @@
       <workItem from="1605963411094" duration="1606000" />
       <workItem from="1605976242514" duration="1319000" />
       <workItem from="1606041442653" duration="5383000" />
+      <workItem from="1607023882470" duration="35000" />
+      <workItem from="1607101977040" duration="3532000" />
+      <workItem from="1607262412803" duration="698000" />
+      <workItem from="1607348687823" duration="818000" />
+      <workItem from="1607504706865" duration="820000" />
     </task>
     <servers />
   </component>

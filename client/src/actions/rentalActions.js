@@ -56,12 +56,18 @@ export const updateRental = (id, rentalData, history) => (dispatch) => {
 
 //Delete Rental
 export const deleteRental = (id) => (dispatch, history) => {
-  axios.delete(`/api/rentals/${id}`).catch((err) =>
-    dispatch({
-      type: GET_ERRORS,
-      payload: err.response.data,
-    })
-  );
+  if (
+    window.confirm(
+      "Sind Sie sicher? Dieser Vorgang kann NICHT rückgängig gemacht werden!"
+    )
+  ) {
+    axios.delete(`/api/rentals/${id}`).catch((err) =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data,
+      })
+    );
+  }
 };
 
 //downloadRentalform

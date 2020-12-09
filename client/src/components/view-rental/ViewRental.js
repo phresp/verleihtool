@@ -244,7 +244,9 @@ class ViewRental extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h3>Ausleihe von {this.state.name}</h3>
+              <h3>
+                Ausleihe von {this.state.vorname} {this.state.name}
+              </h3>
               <form onSubmit={this.onSubmit}>
                 <div className="mb-4">
                   <div className="col">
@@ -267,6 +269,9 @@ class ViewRental extends Component {
                       >
                         PDF exportieren
                       </button>
+                      <button onClick="Submit" className="btn btn-primary">
+                        Bestätigen
+                      </button>
                       <button
                         onClick={this.onDeleteClick.bind(this, this.state.id)}
                         className="btn btn-danger"
@@ -275,7 +280,8 @@ class ViewRental extends Component {
                       </button>
                     </div>
                   </div>
-                  <h6>Status der Leihe</h6>
+                  <p></p>
+                  <h6>Status der Leihe:</h6>
                   <SelectListGroup
                     placeholder="* Status"
                     onChange={this.onChange}
@@ -286,6 +292,112 @@ class ViewRental extends Component {
                     disabled={this.state.processable ? "disabled" : ""}
                   />
                 </div>
+
+                <h6>Leihgeräte</h6>
+                <div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="ipad"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          ipad: !prevState.ipad,
+                        }));
+                      }}
+                      checked={this.state.ipad}
+                      value={this.state.ipad}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="ipad">
+                      iPad Pro
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="mikrofon"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          mikrofon: !prevState.mikrofon,
+                        }));
+                      }}
+                      checked={this.state.mikrofon}
+                      value={this.state.mikrofon}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="mikrofon">
+                      Mikrofon
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="wacom"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          wacom: !prevState.wacom,
+                        }));
+                      }}
+                      value={this.state.wacom}
+                      checked={this.state.wacom}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="wacom">
+                      Wacom Tablet
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="webcam"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          webcam: !prevState.webcam,
+                        }));
+                      }}
+                      value={this.state.webcam}
+                      checked={this.state.webcam}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="webcam">
+                      Webcam
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="stativ"
+                      onChange={() => {
+                        this.setState((prevState) => ({
+                          stativ: !prevState.stativ,
+                        }));
+                      }}
+                      value={this.state.stativ}
+                      checked={this.state.stativ}
+                      disabled={this.state.processable ? "disabled" : ""}
+                    />
+                    <label className="form-check-label" htmlFor="stativ">
+                      Mikrofonstativ
+                    </label>
+                    <div></div>
+                  </div>
+                </div>
+
+                <h6>Details:</h6>
+                <TextAreaFieldGroup
+                  placeholder="Bemerkungen"
+                  onChange={this.onChange}
+                  value={this.state.details}
+                  name="details"
+                  error={errors.details}
+                  disabled={this.state.processable ? "disabled" : ""}
+                />
+
                 <h6>Name:</h6>
                 <TextFieldGroup
                   placeholder="* 'Name'"
@@ -437,111 +549,6 @@ class ViewRental extends Component {
                   value={moment.utc(this.state.rückgabe).format("YYYY-MM-DD")}
                   name={"rückgabe"}
                   error={errors.rückgabe}
-                  disabled={this.state.processable ? "disabled" : ""}
-                />
-
-                <h6>Leihgeräte</h6>
-                <div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="ipad"
-                      onChange={() => {
-                        this.setState((prevState) => ({
-                          ipad: !prevState.ipad,
-                        }));
-                      }}
-                      checked={this.state.ipad}
-                      value={this.state.ipad}
-                      disabled={this.state.processable ? "disabled" : ""}
-                    />
-                    <label className="form-check-label" htmlFor="ipad">
-                      iPad Pro
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="mikrofon"
-                      onChange={() => {
-                        this.setState((prevState) => ({
-                          mikrofon: !prevState.mikrofon,
-                        }));
-                      }}
-                      checked={this.state.mikrofon}
-                      value={this.state.mikrofon}
-                      disabled={this.state.processable ? "disabled" : ""}
-                    />
-                    <label className="form-check-label" htmlFor="mikrofon">
-                      Mikrofon
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="wacom"
-                      onChange={() => {
-                        this.setState((prevState) => ({
-                          wacom: !prevState.wacom,
-                        }));
-                      }}
-                      value={this.state.wacom}
-                      checked={this.state.wacom}
-                      disabled={this.state.processable ? "disabled" : ""}
-                    />
-                    <label className="form-check-label" htmlFor="wacom">
-                      Wacom Tablet
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="webcam"
-                      onChange={() => {
-                        this.setState((prevState) => ({
-                          webcam: !prevState.webcam,
-                        }));
-                      }}
-                      value={this.state.webcam}
-                      checked={this.state.webcam}
-                      disabled={this.state.processable ? "disabled" : ""}
-                    />
-                    <label className="form-check-label" htmlFor="webcam">
-                      Webcam
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="stativ"
-                      onChange={() => {
-                        this.setState((prevState) => ({
-                          stativ: !prevState.stativ,
-                        }));
-                      }}
-                      value={this.state.stativ}
-                      checked={this.state.stativ}
-                      disabled={this.state.processable ? "disabled" : ""}
-                    />
-                    <label className="form-check-label" htmlFor="stativ">
-                      Mikrofonstativ
-                    </label>
-                    <div></div>
-                  </div>
-                </div>
-
-                <h6>Details:</h6>
-                <TextAreaFieldGroup
-                  placeholder="Bemerkungen"
-                  onChange={this.onChange}
-                  value={this.state.details}
-                  name="details"
-                  error={errors.details}
                   disabled={this.state.processable ? "disabled" : ""}
                 />
 
