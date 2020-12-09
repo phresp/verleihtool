@@ -47,6 +47,14 @@ class CreateRental extends Component {
     }
   }
 
+  componentDidMount() {
+    window.onbeforeunload = function (e) {
+      var dialogText = "Vorgang wirklich abbrechen?";
+      e.returnValue = dialogText;
+      return dialogText;
+    };
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
