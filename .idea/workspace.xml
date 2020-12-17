@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/create-rental/CreateRental.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,8 @@
       <workItem from="1607262412803" duration="698000" />
       <workItem from="1607348687823" duration="818000" />
       <workItem from="1607504706865" duration="1324000" />
-      <workItem from="1607508368762" duration="141000" />
+      <workItem from="1607508368762" duration="527000" />
+      <workItem from="1608197571760" duration="399000" />
     </task>
     <servers />
   </component>

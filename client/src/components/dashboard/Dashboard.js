@@ -8,7 +8,7 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import moment from "moment";
 
-const { SearchBar } = Search;
+const { SearchBar, ClearSearchButton } = Search;
 
 class Dashboard extends Component {
   constructor(props) {
@@ -358,6 +358,7 @@ class Dashboard extends Component {
                   Abgeschlossen
                 </button>
                 <SearchBar {...props.searchProps} />
+                <ClearSearchButton {...props.searchProps} />
                 <hr />
                 <BootstrapTable
                   striped
