@@ -30,10 +30,6 @@ export default function (state = initialState, action) {
         ),
       };
     default:
-      return {
-        rentals: null,
-        rental: null,
-        loading: false,
-      };
+      return state;
   }
 }

@@ -273,10 +273,15 @@ class Dashboard extends Component {
           >
             {(props) => (
               <div>
-                <Link to="/new-rental" className="btn btn-info">
-                  <i className="fas fa-user-circle text-primary"></i> Neue
-                  Ausleihe
-                </Link>
+                <div className="btn-group">
+                  <Link to="/new-rental" className="btn btn-info">
+                    <i className="fas fa-user-circle text-primary"></i> Neue
+                    Ausleihe
+                  </Link>
+                  <Link to="/rentalstats" className="btn btn-dark">
+                    <i className="fas fa-chart-pie text-primary"></i>Statistik
+                  </Link>
+                </div>
 
                 <h6>Status Filter:</h6>
 

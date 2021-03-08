@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="56a6f20c-f11e-4d6a-818d-381196f47423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/dashboard/DashboardActions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/rentalReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/rentalReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +40,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="F:\Github-Projects\verleihtool\node_modules\prettier" />
-    <property name="run.prettier.on.save" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -104,7 +109,25 @@
       <workItem from="1607348687823" duration="818000" />
       <workItem from="1607504706865" duration="1324000" />
       <workItem from="1607508368762" duration="527000" />
-      <workItem from="1608197571760" duration="399000" />
+      <workItem from="1608197571760" duration="1069000" />
+      <workItem from="1608284520701" duration="20000" />
+      <workItem from="1608557016283" duration="3523000" />
+      <workItem from="1608581534856" duration="1097000" />
+      <workItem from="1608633445957" duration="2495000" />
+      <workItem from="1608646506519" duration="32000" />
+      <workItem from="1609752977424" duration="650000" />
+      <workItem from="1610030383197" duration="1336000" />
+      <workItem from="1610117398002" duration="636000" />
+      <workItem from="1610184956641" duration="580000" />
+      <workItem from="1610197697857" duration="958000" />
+      <workItem from="1610283105571" duration="558000" />
+      <workItem from="1610292511417" duration="570000" />
+      <workItem from="1610353523248" duration="3666000" />
+      <workItem from="1610398485148" duration="12000" />
+      <workItem from="1610534134246" duration="1436000" />
+      <workItem from="1611316063302" duration="1904000" />
+      <workItem from="1611566873765" duration="3513000" />
+      <workItem from="1615200738011" duration="13547000" />
     </task>
     <servers />
   </component>
@@ -115,64 +138,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/verleihtool" />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605248770212">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="733" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605248770212" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1605519403784">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605519403784" />
-    <state width="1276" height="166" key="GridCell.Tab.0.bottom" timestamp="1605081621716">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968228" />
-    <state width="1276" height="166" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1605081621716" />
-    <state width="1276" height="166" key="GridCell.Tab.0.center" timestamp="1605081621715">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968228" />
-    <state width="1276" height="166" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1605081621715" />
-    <state width="1276" height="166" key="GridCell.Tab.0.left" timestamp="1605081621715">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968227" />
-    <state width="1276" height="166" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1605081621715" />
-    <state width="1276" height="166" key="GridCell.Tab.0.right" timestamp="1605081621716">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604505968228" />
-    <state width="1276" height="166" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1605081621716" />
-    <state x="184" y="85" key="MergeDialog" timestamp="1605219869463">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="85" key="MergeDialog/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605219869463" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1605219869470">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605219869470" />
-    <state x="2002" y="-540" key="SettingsEditor" timestamp="1605521330263">
-      <screen x="1920" y="-836" width="1080" height="1880" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604472434538" />
-    <state x="2002" y="-540" key="SettingsEditor/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@1920.-836.1080.1880" timestamp="1605521330263" />
-    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605190018822">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1605190018822" />
-    <state x="1901" y="-853" width="1096" height="673" maximized="true" key="dock-window-1" timestamp="1604997634491">
-      <screen x="1920" y="-836" width="1080" height="1880" />
-    </state>
-    <state x="1901" y="-853" width="1096" height="673" maximized="true" key="dock-window-1/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1604997634491" />
-    <state x="740" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606465829435">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="232" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1606465829435" />
-    <state x="623" y="225" key="search.everywhere.popup" timestamp="1603746851876">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/-1440.194.1440.860/1920.-836.1080.1880@0.0.1920.1040" timestamp="1603746851876" />
   </component>
 </project>

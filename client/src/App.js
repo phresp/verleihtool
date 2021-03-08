@@ -18,6 +18,8 @@ import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateRental from "./components/create-rental/CreateRental";
 import ViewRental from "./components/view-rental/ViewRental";
+import Rentalstats from "./components/stats/Rentalstats";
+import RentalstatsConfig from "./components/stats/RentalstatsConfig";
 
 import "./App.css";
 
@@ -58,6 +60,20 @@ class App extends Component {
                   exact
                   path="/new-rental"
                   component={CreateRental}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/rentalstats"
+                  component={Rentalstats}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/rentalstats-config"
+                  component={RentalstatsConfig}
                 />
               </Switch>
               <ScrollToTop>
