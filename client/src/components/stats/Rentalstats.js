@@ -28,7 +28,7 @@ class Rentalstats extends Component {
       gesamt.wacom = rentalstats.wacom;
       gesamt.ipad = rentalstats.ipad;
       gesamt.mikrofon = rentalstats.mikrofon;
-      gesamt.stativ = rentalstats.wacom;
+      gesamt.stativ = rentalstats.stativ;
       gesamt.webcam = rentalstats.webcam;
     }
 
